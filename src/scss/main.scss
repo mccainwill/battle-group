@@ -6,10 +6,6 @@ $orange: #f7942e;
 
 @import "clearfix";
 
-@import "tablet";
-
-@import "desktop";
-
 @import "fonts";
 
 @import "characters";
@@ -20,6 +16,10 @@ $orange: #f7942e;
 
 @import "bio";
 
+html{
+	height:100%;
+}
+
 body{
 	font-family: "bebas_neue_regularregular";
 	color: yellow;
@@ -29,36 +29,48 @@ body{
 	position: relative;
 	background-size:cover;
 	background-attachment:fixed;
+	height:100%;
 }
-
-
 
 main{
-
-	
-
+	width:78%;
+	margin: 0 auto;
+	position: relative;
 }
 
-.entry_point{
+.wrapper{
+	width: 78%;
+	margin: 0 auto;
+}
+
+.main-dock{	
+	height:100%;
+}
+
+.entry-point{
 	position: relative;
+	// overflow: auto;
+	padding-bottom: 100px;
 }
 
 .star{
-
+	display:none;
 }
 
 header{
-	// width: 100%;
+	width: 78%;
+	margin: 0 auto;
 	position: relative;
 	z-index: 2;
+	padding-bottom: 5px;
 
 	h1{
 		font-family:Badaboom;
-		margin-left: 50px;
+		// margin-left: 50px;
 		position: relative;
-		float:left;
+		// float:left;
 		font-weight: 100;
-	
+		text-align: center;
 
 			a{
 				color: yellow;
@@ -68,7 +80,7 @@ header{
 
 	.first_s{
 		color:red;
-		font-size:3em;
+		font-size:1.5em;
 		text-shadow: 2px 5px 5px #000;
 	}
 
@@ -77,10 +89,10 @@ header{
 		// float: right;
 		margin:0;
 		// width: 40%;
-		display: table;
+		// display: table;
 
 		li{
-			display: table-cell;
+			display: block;
 			vertical-align: middle;
 		}
 
@@ -93,16 +105,15 @@ header{
 		    font-size: 1em;
 		    text-decoration: none;
 		    border: none;
-		    width: 160px;
-		    margin-left: 30px;
+		    width: 100%;
+		    // margin-left: 30px;
 		    letter-spacing: 0.15em;
 		}
 	}
 
 	li{
 		color:yellow;
-		display: inline-block;
-		padding:5px;
+		padding:5px 0;
 
 		&:last-child a{
 			padding: 15px 65px;
@@ -125,23 +136,17 @@ header{
 	height:574px;
 
 	img{
-    position: absolute;
-    left: 41%;
-    top: 43%;
-    width: 18%;
+		display: none;
 	}
 }
 
 .character_button{
-	background:url(../img/choose_button.png);
-	background-repeat:no-repeat;
-	display:block;
-	width:220px;
-	height:200px;
-	position: relative;
-	top:130px;
-	left:20%;
-	font-family: bebas_neue_regularregular;
+	display: none;
+	background: #018BE4;
+    margin: 20px;
+    border-radius: 10px;
+    position: relative;
+    font-family: bebas_neue_regularregular;
 
 	h2{
 		margin:0;
@@ -167,15 +172,12 @@ header{
 }
 
 .battle_button{
-	background:url(../img/battle_button.png);
-	background-repeat:no-repeat;
-	display:block;
-	width:220px;
-	height:200px;
-	position: relative;
-	top:50px;
-	left:60%;
-	font-family: bebas_neue_regularregular;
+	display: none;
+	background: #018BE4;
+    margin: 20px;
+    border-radius: 10px;
+    position: relative;
+    font-family: bebas_neue_regularregular;
 
 	h2{
 		margin:0;
@@ -218,15 +220,17 @@ header{
 		}
 
 		li{
-			display: table;
+			// display: table;
 			margin: 20px 0;
+			text-align: center;
 			
 			img{
-				float:left;
+				// float:left;
+				width: 100%;
 			}
 
 			p{
-				float:left;
+				// float:left;
 				color: yellow;
  	    		font-size: 1.5em;
     			margin: 0;
@@ -247,8 +251,8 @@ header{
 		}
 
 		ul{
-			float: left;
-			width: 50%;
+			// float: left;
+			// width: 50%;
 			padding:0;
 			margin:0;
 			list-style-type: none;
@@ -284,24 +288,25 @@ header{
 }
 
 .top_pick_left, .top_pick_right{
-	float: left;
-	width: 50%;
+	// float: left;
+	width: 100%;
 }
 
 
 footer{
 	background:#000;
-    height: 100px;
+    // height: 100px;
     margin-top: 30px;
     padding: 0 10%;
+    min-height: 100px;
+    margin-top: -100px;
 
 	p{
 		float:left;
 		color:yellow;
 		font-family: bebas_neue_regularregular;
-
-		&:nth-child(2){
-			float: right;
-		}
 	}
 }
+
+@import "tablet";
+@import "desktop";

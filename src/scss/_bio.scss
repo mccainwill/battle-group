@@ -1,4 +1,4 @@
-@media screen and (min-width:1020px){
+
 	.card{
 		background-color: #fff4d5;
 	}
@@ -7,11 +7,11 @@
 		text-align: center;
 	    padding-top: 70px;
 	    background-image: url(../img/bio_bg_03.jpg);
-	    background-size: cover;
+	    background-size: contain;
 	    background-repeat: no-repeat;
-	    width: 50%;
-	    padding-top: 72%;
-	    float: left;
+	    // width: 50%;
+	    // padding-top: 72%;
+	    // float: left;
 	    position: relative;
 	    box-sizing: border-box;
 
@@ -38,7 +38,7 @@
 	    background-repeat: no-repeat;
 	    background-position: center center;
 	    z-index: 20;
-	    position: absolute;
+	    // position: absolute;
 	    width: 86%;
 	    padding-top: 116%;
 	    top: 8%;
@@ -126,34 +126,12 @@
 		
 
 		.power_rating{
-			float: right;
-		}
-
-	}
-
-	.categories{
-		padding-top: 20px;
-
-
-		div{
-			position: relative;
-
-			div{
-				background-color: pink;
-				height: 23px;
-				position: absolute;
-				top: 0;
-				left: 0;
-				z-index: 2;
-			}
+			// float: right;
 
 		}
-	}
 
-
-
-	.power_rating{
-	    width: 50%;
+		.power_rating{
+	    width: 100%;
 	    background-color: #fff;
 	    border: solid 2px #000;
 	    background-image: url(../img/tile.jpg);
@@ -180,7 +158,32 @@
 			text-align: center;
 			letter-spacing: .5em;
 		}
+		}
+
 	}
+
+	.categories{
+		padding-top: 20px;
+
+
+		div{
+			position: relative;
+
+			div{
+				background-color: pink;
+				height: 23px;
+				position: absolute;
+				top: 0;
+				left: 0;
+				z-index: 2;
+			}
+
+		}
+	}
+
+
+
+	
 
 	.character_1 .power_rating{
 		float: right;
@@ -245,5 +248,3 @@
 	.magical_div{
 		padding: 0 5%;
 	}
-}
-

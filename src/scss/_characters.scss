@@ -43,7 +43,7 @@ form{
 	    background: #2286e8;
 	    box-sizing: border-box;
 	    vertical-align: middle;
-    	width: 84.4%;
+    	width: 84%;
     	font-size: 1.3em;
 	    color: yellow;
 	    text-indent: 20px;
@@ -61,6 +61,7 @@ form{
     	margin-left: 1%;
     	font-size: 3em;
     	padding-top: 5px;
+    	float: right;
     }
 
 }
@@ -69,17 +70,12 @@ form{
 
 
 	div{
-		float: left;
-	    width: 30%;
-	    margin-right: 5%;
+	    width: 60%;
 	    text-align: center;
-
-		&:last-child{
-			margin: 0;
-		}
+	    margin: 0 auto;
 
 		img{
-			  border: solid 10px black;
+			border: solid 10px black;
 		    width: 100%;
 		    box-sizing: border-box;
 		    display: block;
@@ -90,6 +86,7 @@ form{
 
 	h1{
 			font-size: 1.5em;
+			text-align: center;
 		}
 }
 

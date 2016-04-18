@@ -439,7 +439,7 @@ var BattleManager = ( function( window, undefined ){
                     }
                     else{
 
-                        returnObj[ sample.winner === returnObj.fighter1.name ? "fighter1" : "fighter2" ].wins += 1;
+                        returnObj[ sample.winner.name === returnObj.fighter1.name ? "fighter1" : "fighter2" ].wins += 1;
                     } 
 
                     returnObj.data.push( sample );

@@ -15,12 +15,40 @@
 	}
 }
 
-.pre-pick{
-    background-color: orange;
-    background-image: url(../img/pre_picked_bg.jpg);
+// .pre-pick{
+//     background-color: orange;
+//     background-image: url(../img/pre_picked_bg.jpg);
+//     color: #000;
+// 	background-size: cover;
+//     background-repeat: no-repeat;
+//     background-position: center center;
+//     z-index: 0;
+//     width: 100%;
+//     padding-top: 100%;
+//     box-sizing: border-box;
+//     border: solid 5px #000;
+
+
+// 	h1{
+// 		text-align: center;
+// 		font-size: 20em;
+// 		font-family: Badaboom;
+// 		margin: 0;
+// 		padding: 0;
+// 		margin-top: 18%;
+// 	}
+// }
+
+.character_1{
+	
+	.pre-pick{
+    // background-color: orange;
+    // background-image: url(../img/pre_picked_bg.jpg);
+    background-image: url(../img/turn_battle_button_choose.png);
+    background-size: contain;
+    background-color: #2286E8;
     color: #000;
     // height: 500px;
-	background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
     z-index: 0;
@@ -29,24 +57,23 @@
     box-sizing: border-box;
     border: solid 5px #000;
 
-
-	h1{
-		text-align: center;
-		font-size: 20em;
-		font-family: Badaboom;
-		margin: 0;
-		padding: 0;
-		margin-top: 18%;
+		h1{
+			text-align: center;
+			font-size: 20em;
+			font-family: Badaboom;
+			margin: 0;
+			padding: 0;
+			margin-top: 18%;
+		}
 	}
-}
 
-.character_1{
 	.picked{
 		position: absolute;
 		// width: 50%;
 		top: 0;
 		left: 0;
 		// z-index: 20;
+		
 		img{
 			width: 100%;
 			border: solid 5px #000;
@@ -58,6 +85,33 @@
 }
 
 .character_2{ 
+
+	.pre-pick{
+    // background-color: orange;
+    // background-image: url(../img/pre_picked_bg.jpg);
+    background-image: url(../img/stat_battle_button_choose.png);
+    background-size: contain;
+    background-color: #FDE67A;
+    color: #000;
+    // height: 500px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    z-index: 0;
+    width: 100%;
+    padding-top: 100%;
+    box-sizing: border-box;
+    border: solid 5px #000;
+
+		h1{
+			text-align: center;
+			font-size: 20em;
+			font-family: Badaboom;
+			margin: 0;
+			padding: 0;
+			margin-top: 18%;
+		}
+	}
+
 	.picked{
 		position: absolute;
 		// width: 50%;
@@ -74,6 +128,36 @@
 .character_1, .character_2{
 	float: left;
 	width: 50%;
+
+	.power_rating{
+	    width: 50%;
+	    background-color: #fff;
+	    border: solid 2px #000;
+	    background-image: url(../img/tile.jpg);
+	    background-size: 14.6%;
+
+		
+		div{
+			list-style: none;
+			color: #000;
+			
+			h4{
+				padding: 4px;
+				margin: 4px;
+				z-index: 10;
+				position: relative;
+			}
+		}
+
+		h3{
+			padding: 0;
+			margin: 0;
+			background-color: #000;
+			color: #fff;
+			text-align: center;
+			letter-spacing: .5em;
+		}
+		}
 }
 
 .versus{
@@ -183,7 +267,7 @@ div.active{
 
 
 .entry-point{		
-	width: 78%;
+	// width: 78%;
 	margin: 0 auto;
 	position: relative;
 	
@@ -198,12 +282,17 @@ div.active{
 .turnBattleButton{
 	-webkit-appearance: none;
 	background-color: #fff;
+	background: linear-gradient(to right, yellow, red);
 	font-family: Badaboom;
 	font-size: 2.5em;
+	padding: 10px;
 	border: none;
-	position: absolute;
-	top: 56%;
-	left: 4%;
+	width: 50%;
+	display: inline-block;
+	float: left;
+	// position: absolute;
+	// top: 56%;
+	// left: 4%;
 }
 
 .stat_battle_button{
@@ -215,12 +304,17 @@ div.active{
 .statBattleButton{
 	-webkit-appearance: none;
 	background-color: #fff;
+	background: linear-gradient(to right, red, yellow);
 	font-family: Badaboom;
 	font-size: 2.5em;
+	padding: 10px;
 	border: none;
-	position: absolute;
-	top: 57%;
-	left: 73%;
+	width: 50%;
+	display: inline-block;
+	float: left;
+	// position: absolute;
+	// top: 57%;
+	// left: 73%;
 }
 
 .randomPickButton{

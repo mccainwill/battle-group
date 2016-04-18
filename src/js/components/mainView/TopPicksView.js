@@ -94,32 +94,32 @@ var TopPicksView = Backbone.View.extend({
     show: function () {
             this.$el.find('.first-hero img').attr('src',
                 (this.model1.get('thumbnail')
-                + '/landscape_large'   
+                + '/landscape_amazing'   
                 + '.' + this.model1.get('extension')));
 
             this.$el.find('.second-hero img').attr('src',
                 (this.model2.get('thumbnail')
-                + '/landscape_large'   
+                + '/landscape_amazing'   
                 + '.' + this.model2.get('extension')));    
 
             this.$el.find('.third-hero img').attr('src',
                 (this.model3.get('thumbnail')
-                + '/landscape_large'   
+                + '/landscape_amazing'   
                 + '.' + this.model3.get('extension')));
 
             this.$el.find('.fourth-hero img').attr('src',
                 (this.model4.get('thumbnail')
-                + '/landscape_large'   
+                + '/landscape_amazing'   
                 + '.' + this.model4.get('extension')));
 
             this.$el.find('.fifth-hero img').attr('src',
                 (this.model5.get('thumbnail')
-                + '/landscape_large'   
+                + '/landscape_amazing'   
                 + '.' + this.model5.get('extension')));
 
             this.$el.find('.sixth-hero img').attr('src',
                 (this.model6.get('thumbnail')
-                + '/landscape_large'   
+                + '/landscape_amazing'   
                 + '.' + this.model6.get('extension')));
 
 

@@ -14,264 +14,6 @@
 .clear {
   clear: both; }
 
-@media screen and (min-width: 700px) {
-  main {
-    margin: 0 auto; }
-
-  .star {
-    display: block;
-    position: absolute;
-    top: -86px;
-    left: -91px;
-    z-index: 100; }
-
-  header {
-    width: 90%;
-    height: 115px; }
-    header h1 {
-      margin: 0;
-      margin-left: 12%;
-      font-size: 1.5em; }
-    header .top_nav {
-      padding: 0;
-      margin: 30px 0 0 0;
-      float: right;
-      width: auto; }
-      header .top_nav a {
-        padding: 15px 50px; }
-      header .top_nav button {
-        float: left; }
-    header li {
-      color: yellow;
-      display: inline-block;
-      padding: 5px;
-      width: auto; }
-      header li:last-child a {
-        padding: 10px 30px;
-        margin-left: 30px; }
-
-  .character_button {
-    left: 10%; }
-
-  .main_toppicks li img, .recent_battles li img {
-    float: left; }
-  .main_toppicks li p, .recent_battles li p {
-    float: left; }
-
-  .battle1, .battle2 {
-    width: 100%;
-    height: 200px;
-    margin: 0 auto 20px auto; }
-
-  footer {
-    height: 100px;
-    margin: 0 auto;
-    padding: 0 7.5%; }
-    footer p {
-      margin-bottom: 0; } }
-@media screen and (min-width: 1000px) {
-  header {
-    width: 79%;
-    margin: 0 auto;
-    height: 115px; }
-    header h1 {
-      margin: 0;
-      margin-left: 3%;
-      font-size: 2em; }
-
-  .top_nav {
-    height: 115px;
-    float: right; }
-    .top_nav a {
-      padding: 15px 50px; }
-
-  li:last-child a {
-    padding: 15px 65px;
-    margin-left: 30px; }
-
-  .character_button {
-    top: 100px;
-    left: 20%; }
-
-  .card {
-    background-color: #fff4d5; }
-
-  .combatant {
-    text-align: center;
-    padding-top: 70px;
-    background-image: url(../img/bio_bg_03.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
-    width: 50%;
-    padding-top: 72%;
-    float: left;
-    position: relative;
-    box-sizing: border-box; }
-    .combatant h1 {
-      color: #ffd633;
-      position: absolute;
-      text-shadow: -4px -2px 2px rgba(0, 0, 0, 0.4);
-      bottom: 2%;
-      left: 5%;
-      text-align: left;
-      margin: 0;
-      padding: 0;
-      font-family: Impact;
-      text-transform: uppercase;
-      z-index: 30; }
-      .combatant h1:first-letter {
-        font-size: 4em; }
-
-  .bio_img {
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center center;
-    z-index: 20;
-    position: absolute;
-    width: 86%;
-    padding-top: 116%;
-    top: 8%;
-    box-sizing: border-box;
-    margin: 4% 7% 17% 7%; }
-
-  .levels {
-    background-color: #000; }
-    .levels p {
-      text-align: center;
-      background-color: #000;
-      color: #fff;
-      float: left;
-      width: 14.23%;
-      margin: 0;
-      padding: 0; }
-      .levels p:first-child {
-        width: 7.3%;
-        text-align: left; }
-      .levels p:last-child {
-        width: 7.3%;
-        padding-right: 0;
-        text-align: right; }
-
-  .yellow_box {
-    background-color: #ffd633;
-    position: relative;
-    border-top: solid 1px #000;
-    border-bottom: solid 1px #000;
-    height: 50px;
-    margin-top: 2.5%;
-    margin-bottom: 20px; }
-    .yellow_box h1 {
-      margin: 0;
-      font-family: Impact;
-      color: #2286e8;
-      position: absolute;
-      top: 13%;
-      left: 65px; }
-
-  .character_bio {
-    width: 50%;
-    position: relative;
-    float: left;
-    box-sizing: border-box; }
-    .character_bio span {
-      font-size: 3em;
-      position: absolute;
-      top: -17px;
-      left: -58px; }
-    .character_bio img {
-      margin-left: 10%; }
-    .character_bio button {
-      margin-top: 20px;
-      display: block;
-      padding: 20px;
-      text-decoration: none;
-      color: #fff4d5;
-      background-color: red;
-      text-align: center;
-      font-size: 1.5em;
-      letter-spacing: .2em;
-      border: none;
-      -webkit-appearance: none;
-      font-family: "bebas_neue_regularregular";
-      width: 100%; }
-    .character_bio .power_rating {
-      float: right; }
-
-  .categories {
-    padding-top: 20px; }
-    .categories div {
-      position: relative; }
-      .categories div div {
-        background-color: pink;
-        height: 23px;
-        position: absolute;
-        top: 0;
-        left: 0;
-        z-index: 2; }
-
-  .power_rating {
-    width: 52%;
-    background-color: #fff;
-    border: solid 2px #000;
-    background-image: url(../img/tile.jpg);
-    background-size: 14.6%; }
-    .power_rating div {
-      list-style: none;
-      color: #000; }
-      .power_rating div h4 {
-        padding: 4px;
-        margin: 4px;
-        z-index: 10;
-        position: relative; }
-    .power_rating h3 {
-      padding: 0;
-      margin: 0;
-      background-color: #000;
-      color: #fff;
-      text-align: center;
-      letter-spacing: .5em; }
-
-  .character_1 .power_rating {
-    float: right; }
-
-  .character_2 .power_rating {
-    float: left; }
-
-  .wins_losses {
-    padding: 5px;
-    margin-top: 20px;
-    background-color: #fff;
-    color: #000; }
-    .wins_losses h3 {
-      float: left;
-      margin: 5px; }
-
-  .wins, .losses {
-    float: left;
-    width: 25%; }
-    .wins h3, .losses h3 {
-      float: left;
-      margin: 5px;
-      text-decoration: underline; }
-    .wins div, .losses div {
-      float: left;
-      width: 25px;
-      height: 25px;
-      border: solid 2px #000; }
-
-  .description {
-    padding: 10px;
-    margin-top: 20px;
-    background-color: #fff;
-    color: #000; }
-    .description h3 {
-      margin: 0; }
-    .description p {
-      font-family: Helvetica;
-      font-size: .8em; }
-
-  .magical_div {
-    padding: 0 5%; } }
 @font-face {
   font-family: Badaboom;
   src: url(fonts/badaboom.ttf);
@@ -300,7 +42,7 @@ form li p, form li button {
   background: #2286e8;
   box-sizing: border-box;
   vertical-align: middle;
-  width: 84.4%;
+  width: 84%;
   font-size: 1.3em;
   color: yellow;
   text-indent: 20px;
@@ -315,15 +57,13 @@ form li p, form li button {
   width: 14%;
   margin-left: 1%;
   font-size: 3em;
-  padding-top: 5px; }
+  padding-top: 5px;
+  float: right; }
 
 .top_picks div {
-  float: left;
-  width: 30%;
-  margin-right: 5%;
-  text-align: center; }
-  .top_picks div:last-child {
-    margin: 0; }
+  width: 60%;
+  text-align: center;
+  margin: 0 auto; }
   .top_picks div img {
     border: solid 10px black;
     width: 100%;
@@ -332,7 +72,8 @@ form li p, form li button {
     margin: 0;
     padding: 0; }
 .top_picks h1 {
-  font-size: 1.5em; }
+  font-size: 1.5em;
+  text-align: center; }
 
 .searchresults li {
   display: block; }
@@ -350,11 +91,11 @@ form li p, form li button {
     font-size: 2em;
     text-shadow: -2px 1px 4px black; }
 
-.pre-pick {
-  background-color: orange;
-  background-image: url(../img/pre_picked_bg.jpg);
+.character_1 .pre-pick {
+  background-image: url(../img/turn_battle_button_choose.png);
+  background-size: contain;
+  background-color: #2286E8;
   color: #000;
-  background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
   z-index: 0;
@@ -362,14 +103,13 @@ form li p, form li button {
   padding-top: 100%;
   box-sizing: border-box;
   border: solid 5px #000; }
-  .pre-pick h1 {
+  .character_1 .pre-pick h1 {
     text-align: center;
     font-size: 20em;
     font-family: Badaboom;
     margin: 0;
     padding: 0;
     margin-top: 18%; }
-
 .character_1 .picked {
   position: absolute;
   top: 0;
@@ -380,6 +120,25 @@ form li p, form li button {
 .character_1 .power_rating {
   float: right; }
 
+.character_2 .pre-pick {
+  background-image: url(../img/stat_battle_button_choose.png);
+  background-size: contain;
+  background-color: #FDE67A;
+  color: #000;
+  background-repeat: no-repeat;
+  background-position: center center;
+  z-index: 0;
+  width: 100%;
+  padding-top: 100%;
+  box-sizing: border-box;
+  border: solid 5px #000; }
+  .character_2 .pre-pick h1 {
+    text-align: center;
+    font-size: 20em;
+    font-family: Badaboom;
+    margin: 0;
+    padding: 0;
+    margin-top: 18%; }
 .character_2 .picked {
   position: absolute;
   top: 0; }
@@ -390,6 +149,27 @@ form li p, form li button {
 .character_1, .character_2 {
   float: left;
   width: 50%; }
+  .character_1 .power_rating, .character_2 .power_rating {
+    width: 50%;
+    background-color: #fff;
+    border: solid 2px #000;
+    background-image: url(../img/tile.jpg);
+    background-size: 14.6%; }
+    .character_1 .power_rating div, .character_2 .power_rating div {
+      list-style: none;
+      color: #000; }
+      .character_1 .power_rating div h4, .character_2 .power_rating div h4 {
+        padding: 4px;
+        margin: 4px;
+        z-index: 10;
+        position: relative; }
+    .character_1 .power_rating h3, .character_2 .power_rating h3 {
+      padding: 0;
+      margin: 0;
+      background-color: #000;
+      color: #fff;
+      text-align: center;
+      letter-spacing: .5em; }
 
 .versus {
   position: absolute;
@@ -470,7 +250,6 @@ div.active {
     height: 50px; }
 
 .entry-point {
-  width: 78%;
   margin: 0 auto;
   position: relative; }
 
@@ -482,12 +261,14 @@ div.active {
 .turnBattleButton {
   -webkit-appearance: none;
   background-color: #fff;
+  background: linear-gradient(to right, yellow, red);
   font-family: Badaboom;
   font-size: 2.5em;
+  padding: 10px;
   border: none;
-  position: absolute;
-  top: 56%;
-  left: 4%; }
+  width: 50%;
+  display: inline-block;
+  float: left; }
 
 .stat_battle_button {
   position: absolute;
@@ -497,12 +278,14 @@ div.active {
 .statBattleButton {
   -webkit-appearance: none;
   background-color: #fff;
+  background: linear-gradient(to right, red, yellow);
   font-family: Badaboom;
   font-size: 2.5em;
+  padding: 10px;
   border: none;
-  position: absolute;
-  top: 57%;
-  left: 73%; }
+  width: 50%;
+  display: inline-block;
+  float: left; }
 
 .randomPickButton {
   -webkit-appearance: none;
@@ -522,12 +305,14 @@ div.active {
   box-sizing: border-box;
   border: solid 5px #000; }
 
+.turnview, .statview {
+  width: 100%; }
+
 .arena {
   background: url(../img/sidewalk.jpg);
   background-size: cover;
-  width: 128%;
-  background-repeat: no-repeat;
-  margin: 0 -14%; }
+  width: 100%;
+  background-repeat: no-repeat; }
 
 .health_bars {
   padding: 20px 0;
@@ -553,11 +338,13 @@ div.active {
 
 .combatant_one, .combatant_two {
   float: left;
-  width: 249px;
+  width: 30%;
   text-align: center; }
   .combatant_one p, .combatant_two p {
     font-size: 1.6em;
     text-shadow: 2px 2px 2px #000; }
+  .combatant_one img, .combatant_two img {
+    width: 100%; }
 
 .combatant_one {
   float: left;
@@ -578,9 +365,9 @@ div.active {
   position: absolute; }
 
 .stats_battle, .turn_battle {
-  background: #0000FF;
-  border: 20px solid #f7942e;
-  margin: 30px 0; }
+  background: #043261;
+  margin: 30px auto;
+  width: 78%; }
 
 .victories_left, .victories_right {
   padding: 0;
@@ -614,9 +401,10 @@ div.active {
     font-size: 1.5em; }
 
 .battle_buttons {
-  width: 100%;
+  width: 82%;
   display: block;
-  text-align: center; }
+  text-align: center;
+  margin: 20px auto; }
 
 .button {
   display: inline-block;
@@ -624,7 +412,8 @@ div.active {
   height: 100px;
   background: orange;
   text-align: center;
-  border: 6px solid #000; }
+  border: 6px solid #000;
+  box-sizing: border-box; }
   .button p {
     font-size: 2em;
     color: #000;
@@ -657,15 +446,557 @@ div.active {
 
 .turns {
   list-style-type: none;
-  padding: 0;
+  padding: 10px 0;
   margin: 0 auto;
   min-height: 200px;
   width: 90%; }
   .turns li {
     margin: 20px;
+    font-size: .9em; }
+
+.card {
+  background-color: #fff4d5; }
+
+.combatant {
+  text-align: center;
+  padding-top: 70px;
+  background-image: url(../img/bio_bg_03.jpg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: relative;
+  box-sizing: border-box; }
+  .combatant h1 {
+    color: #ffd633;
+    position: absolute;
+    text-shadow: -4px -2px 2px rgba(0, 0, 0, 0.4);
+    bottom: 2%;
+    left: 5%;
+    text-align: left;
+    margin: 0;
+    padding: 0;
+    font-family: Impact;
+    text-transform: uppercase;
+    z-index: 30; }
+    .combatant h1:first-letter {
+      font-size: 4em; }
+
+.bio_img {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  z-index: 20;
+  width: 86%;
+  padding-top: 116%;
+  top: 8%;
+  box-sizing: border-box;
+  margin: 4% 7% 17% 7%; }
+
+.levels {
+  background-color: #000; }
+  .levels p {
+    text-align: center;
+    background-color: #000;
+    color: #fff;
+    float: left;
+    width: 14.23%;
+    margin: 0;
+    padding: 0; }
+    .levels p:first-child {
+      width: 7.3%;
+      text-align: left; }
+    .levels p:last-child {
+      width: 7.3%;
+      padding-right: 0;
+      text-align: right; }
+
+.yellow_box {
+  background-color: #ffd633;
+  position: relative;
+  border-top: solid 1px #000;
+  border-bottom: solid 1px #000;
+  height: 50px;
+  margin-top: 2.5%;
+  margin-bottom: 20px; }
+  .yellow_box h1 {
+    margin: 0;
+    font-family: Impact;
+    color: #2286e8;
+    position: absolute;
+    top: 13%;
+    left: 65px; }
+
+.character_bio {
+  width: 50%;
+  position: relative;
+  float: left;
+  box-sizing: border-box; }
+  .character_bio span {
+    font-size: 3em;
+    position: absolute;
+    top: -17px;
+    left: -58px; }
+  .character_bio img {
+    margin-left: 10%; }
+  .character_bio button {
+    margin-top: 20px;
+    display: block;
+    padding: 20px;
+    text-decoration: none;
+    color: #fff4d5;
+    background-color: red;
+    text-align: center;
+    font-size: 1.5em;
+    letter-spacing: .2em;
+    border: none;
+    -webkit-appearance: none;
+    font-family: "bebas_neue_regularregular";
+    width: 100%; }
+  .character_bio .power_rating {
+    width: 100%;
+    background-color: #fff;
+    border: solid 2px #000;
+    background-image: url(../img/tile.jpg);
+    background-size: 14.6%; }
+    .character_bio .power_rating div {
+      list-style: none;
+      color: #000; }
+      .character_bio .power_rating div h4 {
+        padding: 4px;
+        margin: 4px;
+        z-index: 10;
+        position: relative; }
+    .character_bio .power_rating h3 {
+      padding: 0;
+      margin: 0;
+      background-color: #000;
+      color: #fff;
+      text-align: center;
+      letter-spacing: .5em; }
+
+.categories {
+  padding-top: 20px; }
+  .categories div {
+    position: relative; }
+    .categories div div {
+      background-color: pink;
+      height: 23px;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 2; }
+
+.character_1 .power_rating {
+  float: right;
+  margin-top: 25%;
+  margin-right: 10%; }
+
+.character_2 .power_rating {
+  float: left;
+  margin-top: 25%;
+  margin-left: 10%; }
+
+.wins_losses {
+  padding: 5px;
+  margin-top: 20px;
+  background-color: #fff;
+  color: #000; }
+  .wins_losses h3 {
+    float: left;
+    margin: 5px; }
+
+.wins, .losses {
+  float: left;
+  width: 25%; }
+  .wins h3, .losses h3 {
+    float: left;
+    margin: 5px;
+    text-decoration: underline; }
+  .wins div, .losses div {
+    float: left;
+    width: 35px;
+    height: 25px;
+    border: solid 2px #000;
+    vertical-align: center; }
+
+.description {
+  padding: 10px;
+  margin-top: 20px;
+  background-color: #fff;
+  color: #000; }
+  .description h3 {
+    margin: 0; }
+  .description p {
+    font-family: Helvetica;
+    font-size: .8em; }
+
+.magical_div {
+  padding: 0 5%; }
+
+html {
+  height: 100%; }
+
+body {
+  font-family: "bebas_neue_regularregular";
+  color: yellow;
+  letter-spacing: .2em;
+  background: url(../img/background.jpg);
+  margin: 0;
+  position: relative;
+  background-size: cover;
+  background-attachment: fixed;
+  height: 100%; }
+
+main {
+  width: 78%;
+  margin: 0 auto;
+  position: relative; }
+
+.wrapper {
+  width: 78%;
+  margin: 0 auto; }
+
+.main-dock {
+  height: 100%; }
+
+.entry-point {
+  position: relative;
+  padding-bottom: 100px; }
+
+.star {
+  display: none; }
+
+header {
+  width: 78%;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+  padding-bottom: 5px; }
+  header h1 {
+    font-family: Badaboom;
+    position: relative;
+    font-weight: 100;
+    text-align: center; }
+    header h1 a {
+      color: yellow;
+      text-decoration: none; }
+  header .first_s {
+    color: red;
+    font-size: 1.5em;
+    text-shadow: 2px 5px 5px #000; }
+  header .top_nav {
+    padding: 0;
+    margin: 0; }
+    header .top_nav li {
+      display: block;
+      vertical-align: middle; }
+    header .top_nav button {
+      display: block;
+      padding: 15px;
+      color: yellow;
+      background-color: #2286e8;
+      font-family: 'bebas_neue_regularregular';
+      font-size: 1em;
+      text-decoration: none;
+      border: none;
+      width: 100%;
+      letter-spacing: 0.15em; }
+  header li {
+    color: yellow;
+    padding: 5px 0; }
+    header li:last-child a {
+      padding: 15px 65px;
+      margin-left: 30px; }
+
+.main_buttons {
+  background: url(../img/marvel_group.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: block;
+  height: 574px;
+  position: relative; }
+
+.buttons {
+  height: 574px; }
+  .buttons img {
+    display: none; }
+
+.character_button {
+  display: none;
+  background: #018BE4;
+  margin: 20px;
+  border-radius: 10px;
+  position: relative;
+  font-family: bebas_neue_regularregular; }
+  .character_button h2 {
+    margin: 0;
+    padding: 10px 20px;
+    text-align: center;
+    font-size: 2em; }
+  .character_button a {
+    text-decoration: none;
+    font-size: .75em;
+    color: yellow;
+    display: block;
+    padding: 60px 0; }
+  .character_button p {
+    color: yellow;
+    margin: 0;
+    padding: 55px 20px;
     font-size: 1.5em; }
 
-@media screen and (min-width: 1020px) {
+.battle_button {
+  display: none;
+  background: #018BE4;
+  margin: 20px;
+  border-radius: 10px;
+  position: relative;
+  font-family: bebas_neue_regularregular; }
+  .battle_button h2 {
+    margin: 0;
+    padding: 10px 56px;
+    text-align: center;
+    font-size: 2em; }
+  .battle_button a {
+    text-decoration: none;
+    font-size: .75em;
+    color: yellow;
+    padding: 80px 0;
+    display: block; }
+
+.picks_battles {
+  font-family: bebas_neue_regularregular; }
+  .picks_battles .main_toppicks h3 {
+    color: yellow;
+    text-align: center;
+    font-size: 2.5em;
+    margin-top: 40px;
+    margin-bottom: 20px; }
+  .picks_battles .main_toppicks ul {
+    padding: 0;
+    margin: 0;
+    list-style-type: none; }
+  .picks_battles .main_toppicks li {
+    margin: 20px 0;
+    text-align: center; }
+    .picks_battles .main_toppicks li img {
+      width: 100%; }
+    .picks_battles .main_toppicks li p {
+      color: yellow;
+      font-size: 1.5em;
+      margin: 0;
+      padding: 55px 15px; }
+  .picks_battles .recent_battles h3 {
+    color: yellow;
+    text-align: center;
+    font-size: 2em; }
+  .picks_battles .recent_battles ul {
+    padding: 0;
+    margin: 0;
+    list-style-type: none; }
+  .picks_battles .recent_battles .recent_versus {
+    background: url(../img/versus.png);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    display: block;
+    width: 20%;
+    height: 130px;
+    float: left;
+    margin-top: 7%; }
+  .picks_battles .recent_battles .battle1 .character1, .picks_battles .recent_battles .battle1 .character2, .picks_battles .recent_battles .battle2 .character1, .picks_battles .recent_battles .battle2 .character2 {
+    background: url(../img/character_square.jpg);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    width: 39%;
+    height: 200px;
+    float: left; }
+
+.top_pick_left, .top_pick_right {
+  width: 100%; }
+
+footer {
+  background: #000;
+  margin-top: 30px;
+  padding: 0 10%;
+  min-height: 100px;
+  margin-top: -100px; }
+  footer p {
+    float: left;
+    color: yellow;
+    font-family: bebas_neue_regularregular; }
+
+@media screen and (min-width: 700px) {
+  main {
+    margin: 0 auto; }
+
+  .star {
+    display: block;
+    position: absolute;
+    top: -86px;
+    left: -90px;
+    z-index: 100;
+    width: 280px; }
+
+  header {
+    width: 78%;
+    margin: 0 auto;
+    height: 115px; }
+    header h1 {
+      margin: 0;
+      margin-left: 5%;
+      font-size: 1.5em;
+      float: left;
+      text-align: left; }
+    header .first_s {
+      font-size: 3em; }
+    header .top_nav {
+      padding: 0;
+      float: right;
+      width: auto;
+      display: table; }
+      header .top_nav a {
+        padding: 15px 50px; }
+      header .top_nav button {
+        width: 160px;
+        margin-left: 30px; }
+    header li {
+      color: yellow;
+      padding: 5px 0;
+      width: auto; }
+      header li:last-child a {
+        padding: 10px 30px;
+        margin-left: 30px; }
+
+  .buttons img {
+    position: absolute;
+    left: 41%;
+    top: 43%;
+    width: 18%; }
+
+  .character_button {
+    display: block;
+    width: 220px;
+    height: 200px;
+    position: relative;
+    font-family: bebas_neue_regularregular;
+    left: 30%;
+    top: 0; }
+
+  .battle_button {
+    display: block;
+    width: 220px;
+    height: 200px;
+    left: 30%;
+    top: 0; }
+
+  .main_toppicks li, .recent_battles li {
+    text-align: center; }
+    .main_toppicks li img, .recent_battles li img {
+      float: none; }
+    .main_toppicks li p, .recent_battles li p {
+      float: none; }
+
+  .picks_battles .main_toppicks .top_pick_right, .picks_battles .main_toppicks .top_pick_left {
+    float: left;
+    width: 50%; }
+    .picks_battles .main_toppicks .top_pick_right li, .picks_battles .main_toppicks .top_pick_left li {
+      display: block; }
+      .picks_battles .main_toppicks .top_pick_right li img, .picks_battles .main_toppicks .top_pick_left li img {
+        float: none;
+        width: 80%; }
+    .picks_battles .main_toppicks .top_pick_right p, .picks_battles .main_toppicks .top_pick_left p {
+      float: none; }
+
+  .recent_battles ul {
+    float: left;
+    width: 50%; }
+
+  .battle1, .battle2 {
+    width: 100%;
+    height: 200px;
+    margin: 0 auto 20px auto; }
+
+  footer {
+    margin: 0 auto;
+    padding: 0 7.5%; }
+
+  /* Characters */
+  .combatant {
+    width: 50%;
+    float: left;
+    background-size: cover;
+    padding-top: 72%; }
+
+  .bio_img {
+    position: absolute; }
+
+  .top_picks div {
+    float: left;
+    width: 30%;
+    margin-right: 5%;
+    text-align: center; }
+    .top_picks div:last-child {
+      margin: 0; }
+  .top_picks h1 {
+    text-align: left; }
+
+  /* Fight */
+  .combatant_one, .combatant_two {
+    width: 249px; }
+
+  .turns li {
+    font-size: 1.5em; } }
+@media screen and (min-width: 1000px) {
+  header {
+    width: 78%;
+    margin: 0 auto;
+    height: 115px; }
+    header h1 {
+      margin: 0;
+      margin-left: 5%;
+      font-size: 2em; }
+    header .top_nav {
+      height: 115px;
+      float: right; }
+      header .top_nav a {
+        padding: 15px 50px; }
+      header .top_nav li {
+        display: table-cell;
+        padding: 5px; }
+        header .top_nav li button {
+          margin-left: 0; }
+        header .top_nav li:last-child a {
+          padding: 15px 65px;
+          margin-left: 30px; }
+
+  .character_button {
+    float: left;
+    top: 100px;
+    left: 12%; }
+
+  .battle_button {
+    float: left;
+    top: 200px;
+    left: 30%; }
+
+  .buttons img {
+    display: block;
+    position: absolute;
+    left: 40%;
+    top: 43%;
+    width: 18%; }
+
+  .main_toppicks li, .recent_battles li {
+    text-align: auto; }
+    .main_toppicks li img, .recent_battles li img {
+      float: left; }
+    .main_toppicks li p, .recent_battles li p {
+      float: left; }
+
+  .picks_battles li img, .main_toppicks li img {
+    float: left; }
+  .picks_battles li p, .main_toppicks li p {
+    float: left; }
+
   .card {
     background-color: #fff4d5; }
 
@@ -769,6 +1100,22 @@ div.active {
       width: 100%; }
     .character_bio .power_rating {
       float: right; }
+    .character_bio .power_rating {
+      width: 100%;
+      background-color: #fff;
+      border: solid 2px #000;
+      background-image: url(../img/tile.jpg);
+      background-size: 14.6%;
+      margin-top: 40px;
+      display: block; }
+      .character_bio .power_rating div {
+        list-style: none;
+        color: #000; }
+        .character_bio .power_rating div h4 {
+          padding: 4px;
+          margin: 4px;
+          z-index: 10;
+          position: relative; }
 
   .categories {
     padding-top: 20px; }
@@ -782,37 +1129,22 @@ div.active {
         left: 0;
         z-index: 2; }
 
-  .power_rating {
-    width: 50%;
-    background-color: #fff;
-    border: solid 2px #000;
-    background-image: url(../img/tile.jpg);
-    background-size: 14.6%; }
-    .power_rating div {
-      list-style: none;
-      color: #000; }
-      .power_rating div h4 {
-        padding: 4px;
-        margin: 4px;
-        z-index: 10;
-        position: relative; }
-    .power_rating h3 {
-      padding: 0;
-      margin: 0;
-      background-color: #000;
-      color: #fff;
-      text-align: center;
-      letter-spacing: .5em; }
+  h3 {
+    padding: 0;
+    margin: 0;
+    background-color: #000;
+    color: #fff;
+    text-align: center;
+    letter-spacing: .5em; }
 
   .character_1 .power_rating {
-    float: right;
-    margin-top: 25%;
-    margin-right: 10%; }
+    float: right; }
 
   .character_2 .power_rating {
-    float: left;
-    margin-top: 25%;
-    margin-left: 10%; }
+    float: left; }
+
+  .winslosses {
+    float: left; }
 
   .wins_losses {
     padding: 5px;
@@ -824,18 +1156,16 @@ div.active {
       margin: 5px; }
 
   .wins, .losses {
-    float: left;
-    width: 25%; }
+    width: 105px; }
     .wins h3, .losses h3 {
       float: left;
       margin: 5px;
       text-decoration: underline; }
     .wins div, .losses div {
       float: left;
-      width: 35px;
+      width: 25px;
       height: 25px;
-      border: solid 2px #000;
-      vertical-align: center; }
+      border: solid 2px #000; }
 
   .description {
     padding: 10px;
@@ -849,192 +1179,16 @@ div.active {
       font-size: .8em; }
 
   .magical_div {
-    padding: 0 5%; } }
-body {
-  font-family: "bebas_neue_regularregular";
-  color: yellow;
-  letter-spacing: .2em;
-  background: url(../img/background.jpg);
-  margin: 0;
-  position: relative;
-  background-size: cover;
-  background-attachment: fixed; }
+    padding: 0 5%; }
 
-.entry_point {
-  position: relative; }
+  footer {
+    margin: 0 auto;
+    padding: 0 7.5%; }
+    footer p {
+      margin-bottom: 0; }
+      footer p:nth-child(2) {
+        float: right; }
 
-header {
-  position: relative;
-  z-index: 2; }
-  header h1 {
-    font-family: Badaboom;
-    margin-left: 50px;
-    position: relative;
-    float: left;
-    font-weight: 100; }
-    header h1 a {
-      color: yellow;
-      text-decoration: none; }
-  header .first_s {
-    color: red;
-    font-size: 3em;
-    text-shadow: 2px 5px 5px #000; }
-  header .top_nav {
-    padding: 0;
-    margin: 0;
-    display: table; }
-    header .top_nav li {
-      display: table-cell;
-      vertical-align: middle; }
-    header .top_nav button {
-      display: block;
-      padding: 15px;
-      color: yellow;
-      background-color: #2286e8;
-      font-family: 'bebas_neue_regularregular';
-      font-size: 1em;
-      text-decoration: none;
-      border: none;
-      width: 160px;
-      margin-left: 30px;
-      letter-spacing: 0.15em; }
-  header li {
-    color: yellow;
-    display: inline-block;
-    padding: 5px; }
-    header li:last-child a {
-      padding: 15px 65px;
-      margin-left: 30px; }
-
-.main_buttons {
-  background: url(../img/marvel_group.jpg);
-  background-repeat: no-repeat;
-  background-size: cover;
-  display: block;
-  height: 574px;
-  position: relative; }
-
-.buttons {
-  height: 574px; }
-  .buttons img {
-    position: absolute;
-    left: 41%;
-    top: 43%;
-    width: 18%; }
-
-.character_button {
-  background: url(../img/choose_button.png);
-  background-repeat: no-repeat;
-  display: block;
-  width: 220px;
-  height: 200px;
-  position: relative;
-  top: 130px;
-  left: 20%;
-  font-family: bebas_neue_regularregular; }
-  .character_button h2 {
-    margin: 0;
-    padding: 10px 20px;
-    text-align: center;
-    font-size: 2em; }
-  .character_button a {
-    text-decoration: none;
-    font-size: .75em;
-    color: yellow;
-    display: block;
-    padding: 60px 0; }
-  .character_button p {
-    color: yellow;
-    margin: 0;
-    padding: 55px 20px;
-    font-size: 1.5em; }
-
-.battle_button {
-  background: url(../img/battle_button.png);
-  background-repeat: no-repeat;
-  display: block;
-  width: 220px;
-  height: 200px;
-  position: relative;
-  top: 50px;
-  left: 60%;
-  font-family: bebas_neue_regularregular; }
-  .battle_button h2 {
-    margin: 0;
-    padding: 10px 56px;
-    text-align: center;
-    font-size: 2em; }
-  .battle_button a {
-    text-decoration: none;
-    font-size: .75em;
-    color: yellow;
-    padding: 80px 0;
-    display: block; }
-
-.picks_battles {
-  font-family: bebas_neue_regularregular; }
-  .picks_battles .main_toppicks h3 {
-    color: yellow;
-    text-align: center;
-    font-size: 2.5em;
-    margin-top: 40px;
-    margin-bottom: 20px; }
-  .picks_battles .main_toppicks ul {
-    padding: 0;
-    margin: 0;
-    list-style-type: none; }
-  .picks_battles .main_toppicks li {
-    display: table;
-    margin: 20px 0; }
-    .picks_battles .main_toppicks li img {
-      float: left; }
-    .picks_battles .main_toppicks li p {
-      float: left;
-      color: yellow;
-      font-size: 1.5em;
-      margin: 0;
-      padding: 55px 15px; }
-  .picks_battles .recent_battles h3 {
-    color: yellow;
-    text-align: center;
-    font-size: 2em; }
-  .picks_battles .recent_battles ul {
-    float: left;
-    width: 50%;
-    padding: 0;
-    margin: 0;
-    list-style-type: none; }
-  .picks_battles .recent_battles .recent_versus {
-    background: url(../img/versus.png);
-    background-size: 100%;
-    background-repeat: no-repeat;
-    display: block;
-    width: 20%;
-    height: 130px;
-    float: left;
-    margin-top: 7%; }
-  .picks_battles .recent_battles .battle1 .character1, .picks_battles .recent_battles .battle1 .character2, .picks_battles .recent_battles .battle2 .character1, .picks_battles .recent_battles .battle2 .character2 {
-    background: url(../img/character_square.jpg);
-    background-size: 100%;
-    background-repeat: no-repeat;
-    width: 39%;
-    height: 200px;
-    float: left; }
-
-.top_pick_left, .top_pick_right {
-  float: left;
-  width: 50%; }
-
-footer {
-  background: #000;
-  height: 100px;
-  margin-top: 30px;
-  padding: 0 10%; }
-  footer p {
-    float: left;
-    color: yellow;
-    font-family: bebas_neue_regularregular; }
-    footer p:nth-child(2) {
-      float: right; }
+  /* Characters */ }
 
 /*# sourceMappingURL=main.css.map */

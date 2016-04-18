@@ -9,40 +9,51 @@
 		display: block;
 		position: absolute;
 		top: -86px;
-    	left: -91px;
+    	left: -90px;
 		z-index: 100;
+		width: 280px;
 	}
 
 	header{
 
-		width: 90%;
+		// width: 90%;
+		width: 78%;
+		margin:0 auto;
 		height: 115px;
 
 		h1{
 			margin: 0;
-			margin-left:12%;
+			margin-left:5%;
 			font-size:1.5em;
+			float: left;
+			text-align: left;
+		}
+
+		.first_s{
+			font-size:3em;
 		}
 
 		.top_nav{
 			padding:0;
-			margin:30px 0 0 0;
+			// margin:30px 0 0 0;
 			float:right;
 			width:auto;
+			display: table;
 
 			a{
 				padding: 15px 50px;
 			}
 
 			button{
-				float: left;
+				// float: left;
+				width: 160px;
+				margin-left: 30px;
 			}
 		}
 
 		li{
 			color:yellow;
-			display: inline-block;
-			padding:5px;
+			padding:5px 0;
 			width:auto;
 
 			&:last-child a{
@@ -53,12 +64,38 @@
 
 	}
 
+	.buttons{
+
+		img{
+    		position: absolute;
+    		left: 41%;
+    		top: 43%;
+    		width: 18%;
+		}
+	}
+
 	.character_button{
-		left: 10%;
+		// background:url(../img/choose_button.png);
+		// background-repeat:no-repeat;
+		display:block;
+		width:220px;
+		height:200px;
+		position: relative;
+		font-family: bebas_neue_regularregular;
+		left: 30%;
+		top:0;
+		// float: left;
 	}
 
 	.battle_button{
-
+		// background:url(../img/choose_button.png);
+		// background-repeat:no-repeat;
+		display:block;
+		width:220px;
+		height:200px;
+		left:30%;
+		top:0;
+		// float: lesft;
 	}
 
 	.main_toppicks, .recent_battles{
@@ -70,14 +107,48 @@
 		}
 
 		li{
+			text-align:center;
 
 			img{
-				float: left;
+				float: none;
 			}
 
 			p{
-				float: left;
+				float: none;
 			}
+		}
+	}
+
+	.picks_battles{
+
+		.main_toppicks{
+
+		.top_pick_right, .top_pick_left{
+
+			float: left;
+			width: 50%;
+
+			li{
+				display: block;
+			
+				img{
+					float:none;
+					width:80%;
+				}
+			}
+
+			p{
+				float:none;
+			}
+		}
+		}
+	}
+
+	.recent_battles{
+
+		ul{
+			float: left;
+			width: 50%;
 		}
 	}
 
@@ -89,13 +160,51 @@
 	}
 
 	footer{
-    	height: 100px;
+    	// height: 100px;
     	margin: 0 auto;
     	padding: 0 7.5%;
 
-    	p{
-    		margin-bottom: 0;
-    	}
+    	
 	}
-	
+
+/* Characters */
+
+	.combatant{
+		width: 50%;
+		float: left;
+		background-size: cover;
+		padding-top: 72%;
+	}
+
+	.bio_img{
+		position: absolute; 
+	}
+
+	.top_picks{
+
+		div{
+			float: left;
+		    width: 30%;
+		    margin-right: 5%;
+		    text-align: center;
+
+		    &:last-child{
+				margin: 0;
+			}
+		}
+
+		h1{
+			text-align: left;
+		}
+	}
+
+	/* Fight */
+
+	.combatant_one, .combatant_two{
+		width: 249px;
+	}
+
+	.turns li{
+		font-size: 1.5em;
+	}
 }

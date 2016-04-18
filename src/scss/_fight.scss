@@ -1,10 +1,14 @@
+.turnview, .statview{
+    width:100%;
+}
+
 .arena{
 	background:url(../img/sidewalk.jpg);
 	background-size: cover;
-	width:128%;
+	width:100%;
 	background-repeat:no-repeat;
 	// padding:0 10%;
-    margin:0 -14%;
+    // margin:0 -14%;
 }
 
 .health_bars{
@@ -37,12 +41,16 @@
 
 .combatant_one, .combatant_two{
 	float: left;
-    width: 249px;
+    width: 30%;
     text-align: center;
 
     p{
     	font-size: 1.6em;
     	text-shadow: 2px 2px 2px #000;
+    }
+
+    img{
+        width:100%;
     }
 }
 
@@ -69,9 +77,11 @@
 }
 
 .stats_battle, .turn_battle{
-	background: #0000FF;
-    border: 20px solid #f7942e;
-    margin: 30px 0;
+	// background: #0000FF;
+    background: #043261;
+    // border: 20px solid #f7942e;
+    margin: 30px auto;
+    width: 78%;
 }
 
 // Stat Battle 
@@ -115,10 +125,10 @@
 }
 
 .battle_buttons{
-	width:100%;
+	width:82%;
     display: block;
     text-align: center;
-
+    margin: 20px auto;
     
 }
 
@@ -130,6 +140,7 @@
     // float: left;
     text-align: center;
     border: 6px solid #000;
+    box-sizing: border-box;
     // margin:0 10px;
 
     p{
@@ -197,13 +208,13 @@
 
 .turns{
     list-style-type: none;
-    padding:0;
+    padding:10px 0;
     margin: 0 auto;
     min-height: 200px;
     width: 90%;
 
     li{
         margin: 20px;
-        font-size: 1.5em;
+        font-size: .9em;
     }
 }

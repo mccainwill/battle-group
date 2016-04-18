@@ -29,7 +29,8 @@
     "normalize.css": "^4.0.0",
     "stringify": "^5.1.0",
     "uglify-js": "^2.6.2",
-    "watchify": "^3.7.0"
+    "watchify": "^3.7.0",
+    "battlemanager": "https://github.com/giodif/battlemanager"
   },
   "browserify": {
     "transform": [
