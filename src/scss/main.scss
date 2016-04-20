@@ -32,6 +32,12 @@ body{
 	height:100%;
 }
 
+.superwrapper{
+	min-height:100%;
+	// background: url(/img/halftone-back.png);
+	// padding-bottom: 100px;
+}
+
 main{
 	width:78%;
 	margin: 0 auto;
@@ -297,7 +303,7 @@ footer{
 	background:#000;
     // height: 100px;
     margin-top: 30px;
-    padding: 0 10%;
+    padding: 0 11%;
     min-height: 100px;
     margin-top: -100px;
 

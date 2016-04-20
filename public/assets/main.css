@@ -51,7 +51,7 @@ form li p, form li button {
 .wrapper button {
   height: 70px;
   border: solid 5px yellow;
-  background: #2286e8;
+  background-color: #2286e8;
   box-sizing: border-box;
   vertical-align: middle;
   width: 14%;
@@ -92,7 +92,7 @@ form li p, form li button {
     text-shadow: -2px 1px 4px black; }
 
 .character_1 .pre-pick {
-  background-image: url(../img/turn_battle_button_choose.png);
+  background: url(../img/halftone-back-90.png);
   background-size: contain;
   background-color: #2286E8;
   color: #000;
@@ -100,7 +100,7 @@ form li p, form li button {
   background-position: center center;
   z-index: 0;
   width: 100%;
-  padding-top: 100%;
+  padding-top: 60%;
   box-sizing: border-box;
   border: solid 5px #000; }
   .character_1 .pre-pick h1 {
@@ -121,6 +121,7 @@ form li p, form li button {
   float: right; }
 
 .character_2 .pre-pick {
+  background: url(../img/halftone-back.png);
   background-image: url(../img/stat_battle_button_choose.png);
   background-size: contain;
   background-color: #FDE67A;
@@ -129,7 +130,7 @@ form li p, form li button {
   background-position: center center;
   z-index: 0;
   width: 100%;
-  padding-top: 100%;
+  padding-top: 60%;
   box-sizing: border-box;
   border: solid 5px #000; }
   .character_2 .pre-pick h1 {
@@ -146,36 +147,30 @@ form li p, form li button {
     width: 100%;
     border: solid 5px #000; }
 
-.character_1, .character_2 {
-  float: left;
-  width: 50%; }
-  .character_1 .power_rating, .character_2 .power_rating {
-    width: 50%;
-    background-color: #fff;
-    border: solid 2px #000;
-    background-image: url(../img/tile.jpg);
-    background-size: 14.6%; }
-    .character_1 .power_rating div, .character_2 .power_rating div {
-      list-style: none;
-      color: #000; }
-      .character_1 .power_rating div h4, .character_2 .power_rating div h4 {
-        padding: 4px;
-        margin: 4px;
-        z-index: 10;
-        position: relative; }
-    .character_1 .power_rating h3, .character_2 .power_rating h3 {
-      padding: 0;
-      margin: 0;
-      background-color: #000;
-      color: #fff;
-      text-align: center;
-      letter-spacing: .5em; }
+.character_1 .power_rating, .character_2 .power_rating {
+  width: 50%;
+  background-color: #fff;
+  border: solid 2px #000;
+  background-image: url(../img/tile.jpg);
+  background-size: 14.6%; }
+  .character_1 .power_rating div, .character_2 .power_rating div {
+    list-style: none;
+    color: #000; }
+    .character_1 .power_rating div h4, .character_2 .power_rating div h4 {
+      padding: 4px;
+      margin: 4px;
+      z-index: 10;
+      position: relative; }
+  .character_1 .power_rating h3, .character_2 .power_rating h3 {
+    padding: 0;
+    margin: 0;
+    background-color: #000;
+    color: #fff;
+    text-align: center;
+    letter-spacing: .5em; }
 
 .versus {
-  position: absolute;
-  left: 39%;
-  top: 20%;
-  z-index: 25; }
+  display: none; }
 
 .battle_options {
   text-align: center; }
@@ -228,25 +223,29 @@ div.active {
   .search-dock h2 {
     text-align: left; }
 
+.search-button {
+  background: url(../img/search.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center; }
+
 .searchresults ul {
   margin-top: 30px;
   text-align: left;
   padding: 0; }
 .searchresults li {
-  margin: 10px 0; }
+  margin: 10px 0;
+  text-align: center; }
   .searchresults li img, .searchresults li p, .searchresults li button {
     display: inline-block;
     vertical-align: middle; }
-  .searchresults li img {
-    margin-right: 20%; }
   .searchresults li button {
-    float: right;
-    margin-right: 0;
+    margin: 5px 0;
     font-size: 1.1em;
     font-family: Badaboom;
     background-color: orange;
     border-color: #000;
-    width: 17%;
+    width: 80%;
     height: 50px; }
 
 .entry-point {
@@ -301,7 +300,7 @@ div.active {
   background-position: center center;
   z-index: 0;
   width: 100%;
-  padding-top: 100%;
+  padding-top: 60%;
   box-sizing: border-box;
   border: solid 5px #000; }
 
@@ -378,7 +377,7 @@ div.active {
   text-align: center; }
   .victories_left .wins, .victories_left .percent, .victories_right .wins, .victories_right .percent {
     float: left;
-    font-size: 3.5em;
+    font-size: 3em;
     width: 100%;
     padding: 77px 0;
     vertical-align: middle;
@@ -398,7 +397,7 @@ div.active {
   .battle_labels li {
     display: block;
     padding: 40px 0;
-    font-size: 1.5em; }
+    font-size: 1em; }
 
 .battle_buttons {
   width: 82%;
@@ -448,7 +447,8 @@ div.active {
   list-style-type: none;
   padding: 10px 0;
   margin: 0 auto;
-  min-height: 200px;
+  height: 300px;
+  overflow: scroll;
   width: 90%; }
   .turns li {
     margin: 20px;
@@ -460,12 +460,14 @@ div.active {
 .combatant {
   text-align: center;
   padding-top: 70px;
+  padding-bottom: 40px;
   background-image: url(../img/bio_bg_03.jpg);
-  background-size: contain;
+  background-size: cover;
   background-repeat: no-repeat;
   position: relative;
   box-sizing: border-box; }
   .combatant h1 {
+    display: none;
     color: #ffd633;
     position: absolute;
     text-shadow: -4px -2px 2px rgba(0, 0, 0, 0.4);
@@ -476,7 +478,9 @@ div.active {
     padding: 0;
     font-family: Impact;
     text-transform: uppercase;
-    z-index: 30; }
+    z-index: 30;
+    font-size: 1.8em;
+    width: 90%; }
     .combatant h1:first-letter {
       font-size: 4em; }
 
@@ -487,9 +491,8 @@ div.active {
   z-index: 20;
   width: 86%;
   padding-top: 116%;
-  top: 8%;
   box-sizing: border-box;
-  margin: 4% 7% 17% 7%; }
+  margin: 0 7% 0 7%; }
 
 .levels {
   background-color: #000; }
@@ -522,23 +525,25 @@ div.active {
     font-family: Impact;
     color: #2286e8;
     position: absolute;
-    top: 13%;
-    left: 65px; }
+    top: 20%;
+    left: 28px;
+    font-size: 1.5em; }
 
 .character_bio {
-  width: 50%;
+  width: 100%;
   position: relative;
   float: left;
   box-sizing: border-box; }
   .character_bio span {
-    font-size: 3em;
+    font-size: 1.5em;
     position: absolute;
-    top: -17px;
-    left: -58px; }
+    top: -11px;
+    left: -22px; }
   .character_bio img {
     margin-left: 10%; }
   .character_bio button {
     margin-top: 20px;
+    margin-bottom: 20px;
     display: block;
     padding: 20px;
     text-decoration: none;
@@ -601,22 +606,26 @@ div.active {
   background-color: #fff;
   color: #000; }
   .wins_losses h3 {
-    float: left;
-    margin: 5px; }
+    margin: 5px;
+    padding: 2px;
+    background-color: #000;
+    color: #fff; }
+  .wins_losses .winslosses {
+    clear: left; }
 
 .wins, .losses {
-  float: left;
-  width: 25%; }
+  float: left; }
   .wins h3, .losses h3 {
     float: left;
     margin: 5px;
     text-decoration: underline; }
   .wins div, .losses div {
     float: left;
-    width: 35px;
+    width: 25px;
     height: 25px;
     border: solid 2px #000;
-    vertical-align: center; }
+    text-align: center;
+    line-height: 25px; }
 
 .description {
   padding: 10px;
@@ -624,7 +633,11 @@ div.active {
   background-color: #fff;
   color: #000; }
   .description h3 {
-    margin: 0; }
+    margin: 0;
+    background-color: #000;
+    color: #fff;
+    margin: 5px;
+    padding: 2px; }
   .description p {
     font-family: Helvetica;
     font-size: .8em; }
@@ -645,6 +658,9 @@ body {
   background-size: cover;
   background-attachment: fixed;
   height: 100%; }
+
+.superwrapper {
+  min-height: 100%; }
 
 main {
   width: 78%;
@@ -816,7 +832,7 @@ header {
 footer {
   background: #000;
   margin-top: 30px;
-  padding: 0 10%;
+  padding: 0 11%;
   min-height: 100px;
   margin-top: -100px; }
   footer p {
@@ -831,7 +847,7 @@ footer {
   .star {
     display: block;
     position: absolute;
-    top: -86px;
+    top: -85px;
     left: -90px;
     z-index: 100;
     width: 280px; }
@@ -915,15 +931,10 @@ footer {
     height: 200px;
     margin: 0 auto 20px auto; }
 
-  footer {
-    margin: 0 auto;
-    padding: 0 7.5%; }
-
   /* Characters */
   .combatant {
     width: 50%;
     float: left;
-    background-size: cover;
     padding-top: 72%; }
 
   .bio_img {
@@ -939,12 +950,76 @@ footer {
   .top_picks h1 {
     text-align: left; }
 
+  /* Matchup */
+  .character_1, .character_2 {
+    float: left;
+    width: 50%; }
+    .character_1 .pre-pick, .character_2 .pre-pick {
+      padding-top: 100%; }
+    .character_1 .picked, .character_2 .picked {
+      padding-top: 100%; }
+
+  .versus {
+    position: absolute;
+    left: 41%;
+    top: 55%;
+    z-index: 25;
+    display: block;
+    width: 20%; }
+
+  .searchresults li {
+    text-align: left; }
+    .searchresults li img {
+      margin-right: 20%; }
+    .searchresults li button {
+      float: right;
+      margin: 0;
+      width: 17%; }
+
   /* Fight */
   .combatant_one, .combatant_two {
     width: 249px; }
 
   .turns li {
-    font-size: 1.5em; } }
+    font-size: 1.5em; }
+
+  .battle_labels li {
+    font-size: 1.5em; }
+
+  .victories_left .wins, .victories_left .percent, .victories_right .wins, .victories_right .percent {
+    font-size: 3.5em; }
+
+  /* Bio */
+  .combatant {
+    background-size: contain;
+    padding-bottom: 70px; }
+    .combatant .bio_img {
+      top: 8%;
+      margin: 4% 7% 17% 7%; }
+    .combatant h1 {
+      font-size: 1.8em;
+      width: auto; }
+      .combatant h1:first-letter {
+        font-size: 2em; }
+
+  .yellow_box h1 {
+    top: 13%;
+    left: 65px;
+    font-size: 2em; }
+
+  .character_bio {
+    width: 50%; }
+    .character_bio h1 {
+      font-size: 1.2em; }
+    .character_bio span {
+      font-size: 3em;
+      top: -17px;
+      left: -40px; }
+    .character_bio button {
+      margin-bottom: auto; }
+
+  .wins_losses h3 {
+    float: left; } }
 @media screen and (min-width: 1000px) {
   header {
     width: 78%;
@@ -1004,7 +1079,7 @@ footer {
     text-align: center;
     padding-top: 70px;
     background-image: url(../img/bio_bg_03.jpg);
-    background-size: cover;
+    background-size: contain;
     background-repeat: no-repeat;
     width: 50%;
     padding-top: 72%;
@@ -1106,7 +1181,6 @@ footer {
       border: solid 2px #000;
       background-image: url(../img/tile.jpg);
       background-size: 14.6%;
-      margin-top: 40px;
       display: block; }
       .character_bio .power_rating div {
         list-style: none;
@@ -1155,17 +1229,15 @@ footer {
       float: left;
       margin: 5px; }
 
-  .wins, .losses {
-    width: 105px; }
-    .wins h3, .losses h3 {
-      float: left;
-      margin: 5px;
-      text-decoration: underline; }
-    .wins div, .losses div {
-      float: left;
-      width: 25px;
-      height: 25px;
-      border: solid 2px #000; }
+  .wins h3, .losses h3 {
+    float: left;
+    margin: 5px;
+    text-decoration: underline; }
+  .wins div, .losses div {
+    float: left;
+    width: 25px;
+    height: 25px;
+    border: solid 2px #000; }
 
   .description {
     padding: 10px;
@@ -1181,14 +1253,25 @@ footer {
   .magical_div {
     padding: 0 5%; }
 
-  footer {
-    margin: 0 auto;
-    padding: 0 7.5%; }
-    footer p {
-      margin-bottom: 0; }
-      footer p:nth-child(2) {
-        float: right; }
+  footer p {
+    margin-bottom: 0; }
+    footer p:nth-child(2) {
+      float: right; }
 
   /* Characters */ }
+/* Bio */
+.combatant h1 {
+  font-size: 2em;
+  bottom: 18%;
+  left: 8%; }
+  .combatant h1:first-letter {
+    font-size: 4em; }
+
+.character_bio h1 {
+  font-size: 1.5em;
+  left: 56px; }
+.character_bio span {
+  font-size: 3em;
+  left: -40px; }
 
 /*# sourceMappingURL=main.css.map */

@@ -97,7 +97,7 @@
     .wins, .percent{
         // background: url(../img/comic-burst.png);
         float: left;
-        font-size: 3.5em;
+        font-size: 3em;
         width: 100%;
         padding: 77px 0;
         vertical-align: middle;
@@ -120,7 +120,7 @@
     li{
     	display: block;
     	padding: 40px 0;
-    	font-size: 1.5em;
+    	font-size: 1em;
     }
 }
 
@@ -210,7 +210,8 @@
     list-style-type: none;
     padding:10px 0;
     margin: 0 auto;
-    min-height: 200px;
+    height: 300px;
+    overflow: scroll;
     width: 90%;
 
     li{

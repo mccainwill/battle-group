@@ -105,7 +105,7 @@
       text-align: center;
       padding-top: 70px;
       background-image: url(../img/bio_bg_03.jpg);
-      background-size: cover;
+      background-size: contain;
       background-repeat: no-repeat;
       width: 50%;
       padding-top: 72%;
@@ -233,7 +233,7 @@
         border: solid 2px #000;
         background-image: url(../img/tile.jpg);
         background-size: 14.6%;
-        margin-top: 40px;
+        // margin-top: 40px;
         display: block;
       
       div{
@@ -309,7 +309,7 @@
 
     .wins, .losses{
       // float: left;
-      width: 105px;
+      // width: 105px;
 
       h3{
         float: left;
@@ -348,8 +348,8 @@
 
   footer{
       // height: 100px;
-      margin: 0 auto;
-      padding: 0 7.5%;
+      // margin: 0 auto;
+      // padding: 0 7.5%;
 
       p{
         margin-bottom: 0;
@@ -364,5 +364,31 @@
 
 }
 
+/* Bio */
 
+.combatant{
+
+    h1{
+      font-size: 2em;
+      bottom: 18%;
+      left: 8%;
+
+      &:first-letter{
+        font-size: 4em;
+      }
+    }
+  }
+
+.character_bio{
+
+  h1{
+    font-size: 1.5em;
+    left: 56px;
+  }
+
+  span{
+    font-size: 3em;
+    left: -40px;
+  }
+}
 

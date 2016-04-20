@@ -44,7 +44,8 @@
 	.pre-pick{
     // background-color: orange;
     // background-image: url(../img/pre_picked_bg.jpg);
-    background-image: url(../img/turn_battle_button_choose.png);
+    // background-image: url(../img/turn_battle_button_choose.png);
+    background: url(../img/halftone-back-90.png);
     background-size: contain;
     background-color: #2286E8;
     color: #000;
@@ -53,7 +54,7 @@
     background-position: center center;
     z-index: 0;
     width: 100%;
-    padding-top: 100%;
+    padding-top: 60%;
     box-sizing: border-box;
     border: solid 5px #000;
 
@@ -89,6 +90,7 @@
 	.pre-pick{
     // background-color: orange;
     // background-image: url(../img/pre_picked_bg.jpg);
+    background: url(../img/halftone-back.png);
     background-image: url(../img/stat_battle_button_choose.png);
     background-size: contain;
     background-color: #FDE67A;
@@ -98,7 +100,7 @@
     background-position: center center;
     z-index: 0;
     width: 100%;
-    padding-top: 100%;
+    padding-top: 60%;
     box-sizing: border-box;
     border: solid 5px #000;
 
@@ -126,8 +128,8 @@
 }
 
 .character_1, .character_2{
-	float: left;
-	width: 50%;
+	// float: left;
+	// width: 50%;
 
 	.power_rating{
 	    width: 50%;
@@ -161,10 +163,7 @@
 }
 
 .versus{
-	position: absolute;
-    left: 39%;
-    top: 20%;
-    z-index: 25;
+	display: none;
 }
 
 .battle_options{
@@ -232,6 +231,13 @@ div.active{
     }
 }
 
+.search-button{
+	background: url(../img/search.png);
+	background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
 .searchresults{
 	
     ul{
@@ -242,6 +248,7 @@ div.active{
 
     li{
     	margin: 10px 0;
+    	text-align: center;
 
     	img, p, button{
     		display: inline-block;
@@ -249,17 +256,18 @@ div.active{
     	}
 
     	img{
-    		margin-right: 20%;
+    		// margin-right: 20%;
     	}
 
     	button{
-    		float: right;
-    		margin-right: 0;
+    		// float: right;
+    		// margin-right: 0;
+    		margin: 5px 0;
     		font-size: 1.1em;
 		    font-family: Badaboom;
 		    background-color: orange;
 		    border-color: #000;
-		    width: 17%;
+		    width: 80%;
 		    height: 50px;
     	}
     }
@@ -334,7 +342,7 @@ div.active{
     z-index: 0;
     // position: absolute;
     width: 100%;
-    padding-top: 100%;
+    padding-top: 60%;
     // top: 8%;
     box-sizing: border-box;
     // margin: 4% 7% 17% 7%;

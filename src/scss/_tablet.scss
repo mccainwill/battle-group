@@ -8,7 +8,8 @@
 	.star{
 		display: block;
 		position: absolute;
-		top: -86px;
+		top: -85px;
+		// top: 36px;
     	left: -90px;
 		z-index: 100;
 		width: 280px;
@@ -161,8 +162,8 @@
 
 	footer{
     	// height: 100px;
-    	margin: 0 auto;
-    	padding: 0 7.5%;
+    	// margin: 0 auto;
+    	// padding: 0 7.5%;
 
     	
 	}
@@ -172,7 +173,6 @@
 	.combatant{
 		width: 50%;
 		float: left;
-		background-size: cover;
 		padding-top: 72%;
 	}
 
@@ -198,6 +198,47 @@
 		}
 	}
 
+	/* Matchup */
+
+	.character_1, .character_2{
+		float: left;
+		width: 50%;
+
+		.pre-pick{
+			padding-top: 100%;
+		}
+
+		.picked{
+			padding-top: 100%;
+		}
+	}
+
+	.versus{
+		position: absolute;
+	    left: 41%;
+	    top: 55%;
+	    z-index: 25;
+	    display: block;
+	    width: 20%;
+	}
+
+	.searchresults{
+
+		li{
+			text-align: left;
+
+			img{
+				margin-right: 20%;
+			}
+
+			button{
+				float: right;
+				margin: 0;
+				width: 17%;
+			}
+		}
+	}
+
 	/* Fight */
 
 	.combatant_one, .combatant_two{
@@ -207,4 +248,77 @@
 	.turns li{
 		font-size: 1.5em;
 	}
+
+	.battle_labels{
+
+		li{
+			font-size: 1.5em;
+		}
+	}
+
+	.victories_left, .victories_right{
+
+		.wins, .percent{
+			font-size: 3.5em;
+		}
+	}
+
+	/* Bio */
+
+	.combatant{
+
+		background-size: contain;
+		padding-bottom: 70px;
+
+		.bio_img{
+			top: 8%;
+			margin: 4% 7% 17% 7%;
+		}
+
+		h1{
+			font-size: 1.8em;
+			width: auto;
+
+			&:first-letter{
+				font-size: 2em;
+			}
+		}
+	}
+
+	.yellow_box{
+
+		h1{
+			top: 13%;
+			left: 65px;
+			font-size: 2em;
+		}
+	}
+
+	.character_bio{
+
+		width: 50%;
+
+  		h1{
+  			font-size: 1.2em;
+  		}
+
+  		span{
+    		font-size: 3em;
+    		top: -17px;
+    		left: -40px;
+  		}
+
+  		button{
+  			margin-bottom: auto;
+  		}
+	}
+
+	.wins_losses{
+
+
+		h3{
+			float: left;
+		}
+	}
+
 }

@@ -6,8 +6,9 @@
 	.combatant{
 		text-align: center;
 	    padding-top: 70px;
+	    padding-bottom: 40px;
 	    background-image: url(../img/bio_bg_03.jpg);
-	    background-size: contain;
+	    background-size: cover;
 	    background-repeat: no-repeat;
 	    // width: 50%;
 	    // padding-top: 72%;
@@ -16,6 +17,7 @@
 	    box-sizing: border-box;
 
 			h1{
+				display: none;
 				color: #ffd633;
 				position: absolute;
 				text-shadow: -4px -2px 2px rgba(0,0,0,0.4);
@@ -27,6 +29,9 @@
 				font-family: Impact;
 				text-transform: uppercase;
 				z-index: 30;
+				font-size: 1.8em;
+				width: 90%;
+
 				&:first-letter{
 			  		font-size: 4em;
 	  			}
@@ -41,9 +46,10 @@
 	    // position: absolute;
 	    width: 86%;
 	    padding-top: 116%;
-	    top: 8%;
+	    // top: 8%;
 	    box-sizing: border-box;
-	    margin: 4% 7% 17% 7%;
+	    // margin: 4% 7% 17% 7%;
+	    margin: 0 7% 0 7%; 
 	}
 
 	.levels{
@@ -85,22 +91,24 @@
 		    font-family: Impact;
 		    color: #2286e8;
 		    position: absolute;
-		    top: 13%;
-		    left: 65px
+		    top: 20%;
+		    left: 28px;
+		    font-size: 1.5em;
 		}
 	}
 
 	.character_bio{
-		width: 50%;
+		// width: 50%;
+		width: 100%;
 	    position: relative;
 	    float: left;
 	    box-sizing: border-box;
 
 		span{
-			font-size: 3em;
+			font-size: 1.5em;
 		    position: absolute;
-		    top: -17px;
-		    left: -58px;
+		    top: -11px;
+		    left: -22px;
 		}
 		
 
@@ -110,6 +118,7 @@
 		
 		button{
 			margin-top: 20px;
+			margin-bottom: 20px;
 		    display: block;
 		    padding: 20px;
 		    text-decoration: none;
@@ -181,10 +190,6 @@
 		}
 	}
 
-
-
-	
-
 	.character_1 .power_rating{
 		float: right;
 		margin-top: 25%;
@@ -204,14 +209,21 @@
 		color: #000;
 
 		h3{
-			float: left;
+			// float: left;
 			margin: 5px;
+			padding: 2px;
+			background-color: #000;
+        	color: #fff;
+		}
+
+		.winslosses{
+			clear: left;
 		}
 	}
 
 	.wins, .losses{
 		float: left;
-		width: 25%;
+		// width: 25%;
 
 		h3{
 			float: left;
@@ -221,10 +233,11 @@
 
 		div{
 			float: left;
-			width: 35px;
+			width: 25px;
 			height: 25px;
 			border: solid 2px #000;
-			vertical-align: center;
+			text-align: center;
+			line-height: 25px;
 		}
 
 	}
@@ -237,6 +250,10 @@
 
 		h3{
 			margin: 0;
+			background-color: #000;
+        	color: #fff;
+        	margin: 5px;
+			padding: 2px;
 		}
 
 		p{
