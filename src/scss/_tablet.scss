@@ -68,10 +68,10 @@
 	.buttons{
 
 		img{
-    		position: absolute;
-    		left: 41%;
-    		top: 43%;
-    		width: 18%;
+    		// position: absolute;
+    		// left: 41%;
+    		// top: 43%;
+    		width: 100%;
 		}
 	}
 
@@ -205,18 +205,27 @@
 		width: 50%;
 
 		.pre-pick{
-			padding-top: 100%;
+			.choose_icon{
+				padding: 20% 0;
+			}
 		}
 
 		.picked{
 			padding-top: 100%;
 		}
+
+		.hero-pick{
+
+			.power_rating{
+				display: block;
+			}
+		}
 	}
 
 	.versus{
 		position: absolute;
-	    left: 41%;
-	    top: 55%;
+	    left: 40%;
+	    top: 30%;
 	    z-index: 25;
 	    display: block;
 	    width: 20%;

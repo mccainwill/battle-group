@@ -2,17 +2,61 @@
 // 	top: 51px;
 //     left: 64px;
 // }
-.hero-pick{
-	position: relative;
-	
-	h2{
-		position: absolute;
-	    top: -2%;
-	    left: 12%;
-	    z-index: 1;
-	    font-size: 2em;
-	    text-shadow: -2px 1px 4px black;
+.character_1, .character_2{
+
+	.pre-pick{
+
+		.choose_icon{
+			padding:0;
+		}
 	}
+
+	.hero-pick{
+		position: relative;
+		
+		h2{
+			position: absolute;
+		    top: -2%;
+		    left: 12%;
+		    z-index: 1;
+		    font-size: 2em;
+		    text-shadow: -2px 1px 4px black;
+		}
+
+		.power_rating{
+			display: none;
+		    width: 99%;
+		    background-color: #fff;
+		    border: solid 2px #000;
+		    background-image: url(../img/tile.jpg);
+		    background-size: 14.6%;
+		    margin-top:0;
+		    margin-right:0;
+		    margin-left: 0;
+			
+			div{
+				list-style: none;
+				color: #000;
+				
+				h4{
+					padding: 4px;
+					margin: 4px;
+					z-index: 10;
+					position: relative;
+				}
+			}
+
+			h3{
+				padding: 0;
+				margin: 0;
+				background-color: #000;
+				color: #fff;
+				text-align: center;
+				letter-spacing: .5em;
+			}
+		}
+	}
+
 }
 
 // .pre-pick{
@@ -45,18 +89,18 @@
     // background-color: orange;
     // background-image: url(../img/pre_picked_bg.jpg);
     // background-image: url(../img/turn_battle_button_choose.png);
-    background: url(../img/halftone-back-90.png);
-    background-size: contain;
+    background: url(../img/halftone-back-80.png);
+    background-size: cover;
     background-color: #2286E8;
     color: #000;
     // height: 500px;
     background-repeat: no-repeat;
-    background-position: center center;
+    background-position: top center;
     z-index: 0;
     width: 100%;
-    padding-top: 60%;
+    // padding-top: 60%;
     box-sizing: border-box;
-    border: solid 5px #000;
+    // border: solid 5px #000;
 
 		h1{
 			text-align: center;
@@ -65,6 +109,10 @@
 			margin: 0;
 			padding: 0;
 			margin-top: 18%;
+		}
+
+		.choose_icon{
+			width: 100%;
 		}
 	}
 
@@ -90,19 +138,19 @@
 	.pre-pick{
     // background-color: orange;
     // background-image: url(../img/pre_picked_bg.jpg);
-    background: url(../img/halftone-back.png);
-    background-image: url(../img/stat_battle_button_choose.png);
-    background-size: contain;
+    // background-image: url(../img/stat_battle_button_choose.png);
+    background: url(../img/halftone-back-80.png);
+    background-size: cover;
     background-color: #FDE67A;
     color: #000;
     // height: 500px;
     background-repeat: no-repeat;
-    background-position: center center;
+    background-position: top center;
     z-index: 0;
     width: 100%;
-    padding-top: 60%;
+    // padding-top: 60%;
     box-sizing: border-box;
-    border: solid 5px #000;
+    // border: solid 5px #000;
 
 		h1{
 			text-align: center;
@@ -111,6 +159,10 @@
 			margin: 0;
 			padding: 0;
 			margin-top: 18%;
+		}
+
+		.choose_icon{
+			width: 100%;
 		}
 	}
 
@@ -127,40 +179,7 @@
 	}
 }
 
-.character_1, .character_2{
-	// float: left;
-	// width: 50%;
 
-	.power_rating{
-	    width: 50%;
-	    background-color: #fff;
-	    border: solid 2px #000;
-	    background-image: url(../img/tile.jpg);
-	    background-size: 14.6%;
-
-		
-		div{
-			list-style: none;
-			color: #000;
-			
-			h4{
-				padding: 4px;
-				margin: 4px;
-				z-index: 10;
-				position: relative;
-			}
-		}
-
-		h3{
-			padding: 0;
-			margin: 0;
-			background-color: #000;
-			color: #fff;
-			text-align: center;
-			letter-spacing: .5em;
-		}
-		}
-}
 
 .versus{
 	display: none;
@@ -168,6 +187,8 @@
 
 .battle_options{
 	text-align: center;
+	margin: 20px 0;
+	
 	a{
 		display: inline-block;
 		padding: 15px 30px;
@@ -178,7 +199,6 @@
 		font-size: 1.5em;
 		color: #000;
 		width: 125px;
-
 	}
 }
 
@@ -186,6 +206,13 @@ div.active{
 	display: block;
 }
 
+.hidden{
+	display: none;
+}
+
+.active{
+	display: block; 
+}
 
 .search-dock{
 	box-sizing: border-box;
@@ -198,6 +225,7 @@ div.active{
     // left: 11%;
     padding: 30px;
     z-index: 80;
+    top:0;
 
 	input{
 		height: 70px;
@@ -205,7 +233,7 @@ div.active{
 	    background: #2286e8;
 	    box-sizing: border-box;
 	    vertical-align: middle;
-	    width: 81.5%;
+	    width: 81%;
 	    font-size: 1.3em;
 	    color: yellow;
 	    text-indent: 20px;
@@ -231,7 +259,7 @@ div.active{
     }
 }
 
-.search-button{
+button.search-button{
 	background: url(../img/search.png);
 	background-size: contain;
     background-repeat: no-repeat;
@@ -348,5 +376,3 @@ div.active{
     // margin: 4% 7% 17% 7%;
     border: solid 5px #000;
 }
-
-

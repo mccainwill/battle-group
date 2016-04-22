@@ -81,28 +81,53 @@ form li p, form li button {
 #active {
   display: block; }
 
-.hero-pick {
+.character_1 .pre-pick .choose_icon, .character_2 .pre-pick .choose_icon {
+  padding: 0; }
+.character_1 .hero-pick, .character_2 .hero-pick {
   position: relative; }
-  .hero-pick h2 {
+  .character_1 .hero-pick h2, .character_2 .hero-pick h2 {
     position: absolute;
     top: -2%;
     left: 12%;
     z-index: 1;
     font-size: 2em;
     text-shadow: -2px 1px 4px black; }
+  .character_1 .hero-pick .power_rating, .character_2 .hero-pick .power_rating {
+    display: none;
+    width: 99%;
+    background-color: #fff;
+    border: solid 2px #000;
+    background-image: url(../img/tile.jpg);
+    background-size: 14.6%;
+    margin-top: 0;
+    margin-right: 0;
+    margin-left: 0; }
+    .character_1 .hero-pick .power_rating div, .character_2 .hero-pick .power_rating div {
+      list-style: none;
+      color: #000; }
+      .character_1 .hero-pick .power_rating div h4, .character_2 .hero-pick .power_rating div h4 {
+        padding: 4px;
+        margin: 4px;
+        z-index: 10;
+        position: relative; }
+    .character_1 .hero-pick .power_rating h3, .character_2 .hero-pick .power_rating h3 {
+      padding: 0;
+      margin: 0;
+      background-color: #000;
+      color: #fff;
+      text-align: center;
+      letter-spacing: .5em; }
 
 .character_1 .pre-pick {
-  background: url(../img/halftone-back-90.png);
-  background-size: contain;
+  background: url(../img/halftone-back-80.png);
+  background-size: cover;
   background-color: #2286E8;
   color: #000;
   background-repeat: no-repeat;
-  background-position: center center;
+  background-position: top center;
   z-index: 0;
   width: 100%;
-  padding-top: 60%;
-  box-sizing: border-box;
-  border: solid 5px #000; }
+  box-sizing: border-box; }
   .character_1 .pre-pick h1 {
     text-align: center;
     font-size: 20em;
@@ -110,6 +135,8 @@ form li p, form li button {
     margin: 0;
     padding: 0;
     margin-top: 18%; }
+  .character_1 .pre-pick .choose_icon {
+    width: 100%; }
 .character_1 .picked {
   position: absolute;
   top: 0;
@@ -121,18 +148,15 @@ form li p, form li button {
   float: right; }
 
 .character_2 .pre-pick {
-  background: url(../img/halftone-back.png);
-  background-image: url(../img/stat_battle_button_choose.png);
-  background-size: contain;
+  background: url(../img/halftone-back-80.png);
+  background-size: cover;
   background-color: #FDE67A;
   color: #000;
   background-repeat: no-repeat;
-  background-position: center center;
+  background-position: top center;
   z-index: 0;
   width: 100%;
-  padding-top: 60%;
-  box-sizing: border-box;
-  border: solid 5px #000; }
+  box-sizing: border-box; }
   .character_2 .pre-pick h1 {
     text-align: center;
     font-size: 20em;
@@ -140,6 +164,8 @@ form li p, form li button {
     margin: 0;
     padding: 0;
     margin-top: 18%; }
+  .character_2 .pre-pick .choose_icon {
+    width: 100%; }
 .character_2 .picked {
   position: absolute;
   top: 0; }
@@ -147,33 +173,12 @@ form li p, form li button {
     width: 100%;
     border: solid 5px #000; }
 
-.character_1 .power_rating, .character_2 .power_rating {
-  width: 50%;
-  background-color: #fff;
-  border: solid 2px #000;
-  background-image: url(../img/tile.jpg);
-  background-size: 14.6%; }
-  .character_1 .power_rating div, .character_2 .power_rating div {
-    list-style: none;
-    color: #000; }
-    .character_1 .power_rating div h4, .character_2 .power_rating div h4 {
-      padding: 4px;
-      margin: 4px;
-      z-index: 10;
-      position: relative; }
-  .character_1 .power_rating h3, .character_2 .power_rating h3 {
-    padding: 0;
-    margin: 0;
-    background-color: #000;
-    color: #fff;
-    text-align: center;
-    letter-spacing: .5em; }
-
 .versus {
   display: none; }
 
 .battle_options {
-  text-align: center; }
+  text-align: center;
+  margin: 20px 0; }
   .battle_options a {
     display: inline-block;
     padding: 15px 30px;
@@ -188,6 +193,12 @@ form li p, form li button {
 div.active {
   display: block; }
 
+.hidden {
+  display: none; }
+
+.active {
+  display: block; }
+
 .search-dock {
   box-sizing: border-box;
   display: none;
@@ -197,14 +208,15 @@ div.active {
   background-color: blue;
   border: solid 5px yellow;
   padding: 30px;
-  z-index: 80; }
+  z-index: 80;
+  top: 0; }
   .search-dock input {
     height: 70px;
     border: solid 5px yellow;
     background: #2286e8;
     box-sizing: border-box;
     vertical-align: middle;
-    width: 81.5%;
+    width: 81%;
     font-size: 1.3em;
     color: yellow;
     text-indent: 20px;
@@ -223,7 +235,7 @@ div.active {
   .search-dock h2 {
     text-align: left; }
 
-.search-button {
+button.search-button {
   background: url(../img/search.png);
   background-size: contain;
   background-repeat: no-repeat;
@@ -556,27 +568,6 @@ div.active {
     -webkit-appearance: none;
     font-family: "bebas_neue_regularregular";
     width: 100%; }
-  .character_bio .power_rating {
-    width: 100%;
-    background-color: #fff;
-    border: solid 2px #000;
-    background-image: url(../img/tile.jpg);
-    background-size: 14.6%; }
-    .character_bio .power_rating div {
-      list-style: none;
-      color: #000; }
-      .character_bio .power_rating div h4 {
-        padding: 4px;
-        margin: 4px;
-        z-index: 10;
-        position: relative; }
-    .character_bio .power_rating h3 {
-      padding: 0;
-      margin: 0;
-      background-color: #000;
-      color: #fff;
-      text-align: center;
-      letter-spacing: .5em; }
 
 .categories {
   padding-top: 20px; }
@@ -627,23 +618,43 @@ div.active {
     text-align: center;
     line-height: 25px; }
 
-.description {
-  padding: 10px;
-  margin-top: 20px;
-  background-color: #fff;
-  color: #000; }
-  .description h3 {
-    margin: 0;
-    background-color: #000;
-    color: #fff;
-    margin: 5px;
-    padding: 2px; }
-  .description p {
-    font-family: Helvetica;
-    font-size: .8em; }
-
 .magical_div {
   padding: 0 5%; }
+  .magical_div .power_rating {
+    width: 100%;
+    background-color: #fff;
+    border: solid 2px #000;
+    background-image: url(../img/tile.jpg);
+    background-size: 14.6%; }
+    .magical_div .power_rating div {
+      list-style: none;
+      color: #000; }
+      .magical_div .power_rating div h4 {
+        padding: 4px;
+        margin: 4px;
+        z-index: 10;
+        position: relative; }
+    .magical_div .power_rating h3 {
+      padding: 0;
+      margin: 0;
+      background-color: #000;
+      color: #fff;
+      text-align: center;
+      letter-spacing: .5em; }
+  .magical_div .description {
+    padding: 10px;
+    margin-top: 20px;
+    background-color: #fff;
+    color: #000; }
+    .magical_div .description h3 {
+      margin: 0;
+      background-color: #000;
+      color: #fff;
+      margin: 5px;
+      padding: 2px; }
+    .magical_div .description p {
+      font-family: Helvetica;
+      font-size: .8em; }
 
 html {
   height: 100%; }
@@ -728,13 +739,10 @@ header {
   background-repeat: no-repeat;
   background-size: cover;
   display: block;
-  height: 574px;
   position: relative; }
 
-.buttons {
-  height: 574px; }
-  .buttons img {
-    display: none; }
+.buttons img {
+  width: 100%; }
 
 .character_button {
   display: none;
@@ -883,10 +891,7 @@ footer {
         margin-left: 30px; }
 
   .buttons img {
-    position: absolute;
-    left: 41%;
-    top: 43%;
-    width: 18%; }
+    width: 100%; }
 
   .character_button {
     display: block;
@@ -954,15 +959,17 @@ footer {
   .character_1, .character_2 {
     float: left;
     width: 50%; }
-    .character_1 .pre-pick, .character_2 .pre-pick {
-      padding-top: 100%; }
+    .character_1 .pre-pick .choose_icon, .character_2 .pre-pick .choose_icon {
+      padding: 20% 0; }
     .character_1 .picked, .character_2 .picked {
       padding-top: 100%; }
+    .character_1 .hero-pick .power_rating, .character_2 .hero-pick .power_rating {
+      display: block; }
 
   .versus {
     position: absolute;
-    left: 41%;
-    top: 55%;
+    left: 40%;
+    top: 30%;
     z-index: 25;
     display: block;
     width: 20%; }
@@ -1054,11 +1061,7 @@ footer {
     left: 30%; }
 
   .buttons img {
-    display: block;
-    position: absolute;
-    left: 40%;
-    top: 43%;
-    width: 18%; }
+    width: 100%; }
 
   .main_toppicks li, .recent_battles li {
     text-align: auto; }

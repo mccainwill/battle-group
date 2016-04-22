@@ -139,35 +139,7 @@
 
 		}
 
-		.power_rating{
-	    width: 100%;
-	    background-color: #fff;
-	    border: solid 2px #000;
-	    background-image: url(../img/tile.jpg);
-	    background-size: 14.6%;
-
 		
-		div{
-			list-style: none;
-			color: #000;
-			
-			h4{
-				padding: 4px;
-				margin: 4px;
-				z-index: 10;
-				position: relative;
-			}
-		}
-
-		h3{
-			padding: 0;
-			margin: 0;
-			background-color: #000;
-			color: #fff;
-			text-align: center;
-			letter-spacing: .5em;
-		}
-		}
 
 	}
 
@@ -242,26 +214,59 @@
 
 	}
 
-	.description{
-		padding: 10px;
-	    margin-top: 20px;
-		background-color: #fff;
-		color: #000;
-
-		h3{
-			margin: 0;
-			background-color: #000;
-        	color: #fff;
-        	margin: 5px;
-			padding: 2px;
-		}
-
-		p{
-			font-family: Helvetica;
-			font-size: .8em;
-		}
-	}
+	
 
 	.magical_div{
+		
 		padding: 0 5%;
+
+		.power_rating{
+		    width: 100%;
+		    background-color: #fff;
+		    border: solid 2px #000;
+		    background-image: url(../img/tile.jpg);
+		    background-size: 14.6%;
+
+			
+			div{
+				list-style: none;
+				color: #000;
+				
+				h4{
+					padding: 4px;
+					margin: 4px;
+					z-index: 10;
+					position: relative;
+				}
+			}
+
+			h3{
+				padding: 0;
+				margin: 0;
+				background-color: #000;
+				color: #fff;
+				text-align: center;
+				letter-spacing: .5em;
+			}
+		}
+
+		.description{
+			padding: 10px;
+		    margin-top: 20px;
+			background-color: #fff;
+			color: #000;
+
+			h3{
+				margin: 0;
+				background-color: #000;
+	        	color: #fff;
+	        	margin: 5px;
+				padding: 2px;
+			}
+
+			p{
+				font-family: Helvetica;
+				font-size: .8em;
+			}
+		}
 	}

@@ -52,7 +52,7 @@ var HeroPickView = Backbone.View.extend({
             console.log("with hero");
             console.log(this.model);
             this.$el.find('.picked > img').attr('src', (this.model.get('thumbnail')
-                    + '.' + this.model.get('extension')));            
+                    + '.' + this.model.get('extension')));
 
         } else {
             this.withHero = false;
@@ -100,7 +100,10 @@ var HeroPickView = Backbone.View.extend({
 
             this.$el.find('.picked').css({
             'background-image': "url('" + this.model.get('thumbnail') +
-            '.' + this.model.get('extension') + "')" });    
+            '.' + this.model.get('extension') + "')" });
+
+            $('.power_rating').removeClass('hidden'); 
+            $('.power_rating').addClass('active');            
 
             var stats = utils.getStats(this.model.get('id'));
             var strength     = this.getBarPercent(stats.strength);
