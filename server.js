@@ -145,4 +145,4 @@ app.get('/api/winsAndLosses', function (req, res) {
     console.log(result);
 });
 
-app.listen(8000);
+app.listen(process.env.PORT || 8000);
