@@ -14524,7 +14524,7 @@ var SingleHeroModel = Backbone.Model.extend({
     initialize: function initialize() {
         this.url = function () {
 
-            var marvelKey = 'apikey=cd80e84f4acc3f0d2cdabd391244ab24';
+            var marvelKey = 'apikey=fedd59d6507d8fd892bb0a51b80b65ab';
 
             //var marvelKey = 'apikey=41f7d8754906d29d9b0dd03e19b6138a';
 
