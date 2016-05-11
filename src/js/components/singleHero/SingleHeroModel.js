@@ -15,7 +15,7 @@ var SingleHeroModel = Backbone.Model.extend({
 
             //var marvelKey = 'apikey=41f7d8754906d29d9b0dd03e19b6138a';
 
-            return 'http://gateway.marvel.com/v1/public/characters/'
+            return 'https://gateway.marvel.com/v1/public/characters/'
                  + this.id
                  + '?'
                  + marvelKey;
