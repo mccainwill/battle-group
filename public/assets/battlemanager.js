@@ -271,6 +271,7 @@ var BattleManager = ( function( window, undefined ){
                 
                 defender.wounds -= damage;
                 return true;
+                console.log(defender.wounds);
             },
 
             shoot : function shoot( attacker, defender ){

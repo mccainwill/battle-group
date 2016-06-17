@@ -14,15 +14,14 @@ var HeroChildView = Backbone.View.extend({
     className: 'hero-item',
 
     events: {
-        'click': 'onClick'
+        'click': 'onClick',
     },
 
     template: _.template(require('./battleSearchItem.html')),
 
     initialize: function (options) {
         this.searchView = options.searchView;
-        this.listenTo(this.model, 'sync', this.render);
-                
+        this.listenTo(this.model, 'sync', this.render);                
     },
 
     onClick: function () {
@@ -32,8 +31,6 @@ var HeroChildView = Backbone.View.extend({
     render: function () {
         this.$el.html(this.template(this.model));
     }
-
-
 
 });
 
@@ -45,6 +42,7 @@ var MiniSearchView = Backbone.View.extend({
 
     events: {
         'click button': 'onClick',
+        'keyup': 'onKeyUp'
     },
 
     remove: function () {
@@ -53,6 +51,14 @@ var MiniSearchView = Backbone.View.extend({
         });
         Backbone.View.prototype.remove.call(this);           
 
+    },
+
+    onKeyUp: function (e) {
+        console.log('keyup event in SearchView');
+        if (e.which === 13) {
+
+            this.onClick();
+        };
     },
 
     onClick: function () {

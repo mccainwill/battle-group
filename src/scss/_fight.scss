@@ -7,30 +7,67 @@
 	background-size: cover;
 	width:100%;
 	background-repeat:no-repeat;
-	// padding:0 10%;
-    // margin:0 -14%;
 }
 
 .health_bars{
 	padding:20px 0;
-    display: none;
 }
 
 .health_left, .health_right{
 	display: block;
-    width: 35%;
+    width: 40%;
     height: 60px;
-    background: red;
+    background: rgba(128, 128, 128, 0.50)
 }
 
 .health_left{
 	float: left;
-    margin-left:11%;
+    // margin-left:11%;
+    border-top: yellow 2px solid;
+    border-right: yellow 2px solid;
+    border-bottom: yellow 2px solid;
+
+    .health{
+        background: red;
+        // width:80%;
+        height: 100%;
+        float: inherit;
+        transition: ease .5s;
+
+        span{
+            font-family: Badaboom;
+            float: left;
+            margin-left: 20px;
+            font-size: 2em;
+            line-height: 60px;
+            text-shadow: 1px 1px 1px black;
+        }
+    }
 }
 
 .health_right{
 	float: right;
-    margin-right:11%;
+    // margin-right:11%;
+    border-top: yellow 2px solid;
+    border-left: yellow 2px solid;
+    border-bottom: yellow 2px solid;
+
+    .health{
+        background: red;
+        // width:80%;
+        height: 100%;
+        float:inherit;
+        transition: ease .5s;
+
+        span{
+            font-family: Badaboom;
+            float: right;
+            margin-right: 20px;
+            font-size: 2em;
+            line-height: 60px;
+            text-shadow: 1px 1px 1px black;
+        }
+    }
 }
 
 .combatants{
@@ -81,7 +118,7 @@
     background: #043261;
     // border: 20px solid #f7942e;
     margin: 30px auto;
-    width: 78%;
+    width: 82%;
 }
 
 // Stat Battle 
@@ -161,6 +198,7 @@
 // Turn Battle
 
 .turn_battle {
+    overflow: hidden;
 
     .char_one, .char_two{
         
@@ -211,8 +249,8 @@
     padding:10px 0;
     margin: 0 auto;
     height: 300px;
-    overflow: scroll;
-    width: 90%;
+    overflow-y: scroll;
+    // width: 90%;
 
     li{
         margin: 20px;

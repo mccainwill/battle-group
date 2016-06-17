@@ -13465,10 +13465,42 @@ var BattleSpaceView = Backbone.View.extend({
 
             (function () {
                 var appendLI = function appendLI() {
-                    console.log("turn by turn loop");
-                    console.log(result.fightData.length);
+                    // console.log("turn by turn loop");
+                    // console.log(result.fightData.length);
 
                     _this.$el.find('.turns').prepend($('<li>').html(result.fightData[counter].message));
+
+                    var healthRight = (result.fightData[counter].defenderWounds / result.fightData[0].defenderWounds * 100).toFixed(0);
+
+                    $('.health_right .health').css('width', function (width) {
+
+                        if (healthRight < 100) {
+                            width = healthRight + "%";
+                            return width;
+                        } else {
+                            width = 100 + "%";
+                            return width;
+                        }
+                    });
+
+                    var healthLeft = (result.fightData[counter].attackerWounds / result.fightData[0].attackerWounds * 100).toFixed(0);
+
+                    $('.health_left .health').css('width', function (width) {
+
+                        if (healthLeft < 100) {
+                            width = healthLeft + "%";
+                            return width;
+                        } else {
+                            width = 100 + "%";
+                            return width;
+                        }
+                    });
+
+                    console.log();
+                    console.log(result.fightData[counter].defenderWounds);
+                    console.log(result.fightData[0].defenderWounds);
+
+                    // this.$el.find('.health_right')
 
                     counter++;
 
@@ -13477,7 +13509,7 @@ var BattleSpaceView = Backbone.View.extend({
                     };
 
                     if (counter < result.fightData.length) {
-                        setTimeout(appendLI, 4000);
+                        setTimeout(appendLI, 2500);
                     };
                 };
 
@@ -13502,6 +13534,7 @@ var BattleSpaceView = Backbone.View.extend({
                     console.log(result);
                     console.log(_this2.model1.attributes);
                     console.log(_this2.model2.attributes);
+                    console.log(result.fightData[0].attackerWounds);
 
                     if (result.winner !== 'draw') {
 
@@ -13614,7 +13647,7 @@ module.exports = "<h3>RECENT BATTLES</h3>\n<div class=\"battle1\">\n    <div cla
 module.exports = "<main class=\"statview\">\n    <section class=\"arena clearfix\">\n        <div class=\"health_bars clearfix\">\n            <div class=\"health_left\"></div>\n            <div class=\"health_right\"></div>\n        </div>\n\n\n        <div class=\"combatants\">\n            <div class=\"combatant_one\">\n                <img class=\"char_pic\" src=\"\" />\n                <img src=\"img/shadow.png\" />\n                <p>CHARACTER NAME</p>\n            </div>\n\n            <div class=\"action_area\">\n                \n            </div>\n            \n            <div class=\"combatant_two\">\n                <img class=\"char_pic\" src=\"\" />\n                <img src=\"img/shadow.png\" />\n                <p>CHARACTER NAME</p>\n            </div>\n        </div>\n\n\n    </section>\n\n    <section class=\"stats_battle clearfix\">\n        <ul class=\"victories_left\">\n            <li class=\"wins\"></li>\n            <li class=\"percent\"></li>\n        </ul>\n\n        <ul class=\"battle_labels\">\n                <li>\n                <h2>Wins</h2>\n                <p>Out of 15 battles</p>\n                </li>\n                \n                <li>\n                <h2>Chance of Victory</h2>\n                </li>\n        </ul>\n\n        <ul class=\"victories_right\">\n            <li class=\"wins\"></li>\n            <li class=\"percent\"></li>\n        </ul>\n\n    </section>\n\n    <section class=\"battle_buttons\">\n        <div class=\"button\">\n            <p>REMATCH</p>\n        </div>\n        <div class=\"button\">\n            <p>NEW BATTLE</p>\n        </div>\n        <div class=\"button\">\n            <p>TURN BATTLE</p>\n        </div>\n    </section>\n</main>";
 
 },{}],10:[function(require,module,exports){
-module.exports = "        <main class=\"turnview\">\n            <section class=\"arena clearfix\">\n                <div class=\"health_bars clearfix\">\n                    <div class=\"health_left\"></div>\n                    <div class=\"health_right\"></div>\n                </div>\n\n\n                <div class=\"combatants\">\n                    <div class=\"combatant_one\">\n                        <img class=\"char_pic\" src=\"img/character_square.jpg\" />\n                        <img src=\"img/shadow.png\" />\n                        <p>CHARACTER NAME</p>\n                    </div>\n\n                    <div class=\"action_area\">\n                        \n                    </div>\n                    \n                    <div class=\"combatant_two\">\n                        <img class=\"char_pic\" src=\"img/character_square.jpg\" />\n                        <img src=\"img/shadow.png\" />\n                        <p>CHARACTER NAME</p>\n                    </div>\n                </div>\n\n\n            </section>\n\n            <section class=\"turn_battle\">\n                <ul class=\"turns\">\n                    <!-- \n                    For Character One, picture before text.\n                    For Character Two, text before picture.\n                    Order is either determined by JS insert order, or images are absolutely positioned by parent class. -->\n                    \n                    \n                </ul>\n            </section>\n\n            <section class=\"battle_buttons\">\n                <div class=\"button\">\n                    <p>REMATCH</p>\n                </div>\n                <div class=\"button\">\n                    <p>NEW BATTLE</p>\n                </div>\n                <div class=\"button\">\n                    <p>TURN BATTLE</p>\n                </div>\n                <!-- <a href=\"\">Rematch</a> -->\n            </section>\n        </main>";
+module.exports = "        <main class=\"turnview\">\n            <section class=\"arena clearfix\">\n                <div class=\"health_bars clearfix\">\n                    <div class=\"health_left\">\n                        <div class=\"health\"><span>Stamina</span></div>\n                    </div>\n                    <div class=\"health_right\">\n                        <div class=\"health\"><span>Stamina</span></div>\n                    </div>\n                </div>\n\n\n                <div class=\"combatants\">\n                    <div class=\"combatant_one\">\n                        <img class=\"char_pic\" src=\"img/character_square.jpg\" />\n                        <img src=\"img/shadow.png\" />\n                        <p>CHARACTER NAME</p>\n                    </div>\n\n                    <div class=\"action_area\">\n                        \n                    </div>\n                    \n                    <div class=\"combatant_two\">\n                        <img class=\"char_pic\" src=\"img/character_square.jpg\" />\n                        <img src=\"img/shadow.png\" />\n                        <p>CHARACTER NAME</p>\n                    </div>\n                </div>\n\n\n            </section>\n\n            <section class=\"turn_battle\">\n                <ul class=\"turns\">\n                    <!-- \n                    For Character One, picture before text.\n                    For Character Two, text before picture.\n                    Order is either determined by JS insert order, or images are absolutely positioned by parent class. -->\n                    \n                    \n                </ul>\n            </section>\n\n            <section class=\"battle_buttons\">\n                <div class=\"button\">\n                    <p>REMATCH</p>\n                </div>\n                <div class=\"button\">\n                    <p>NEW BATTLE</p>\n                </div>\n                <div class=\"button\">\n                    <p>TURN BATTLE</p>\n                </div>\n                <!-- <a href=\"\">Rematch</a> -->\n            </section>\n        </main>";
 
 },{}],11:[function(require,module,exports){
 'use strict';
@@ -13738,6 +13771,7 @@ var HeroPickView = Backbone.View.extend({
             $('.search-dock').addClass('active');
             $('.search-dock').append(this.searchView.$el);
             this.listenTo(this.searchView, 'pick', this.show);
+            $('input').focus();
         }
 
         // Pull up the search View
@@ -14202,7 +14236,8 @@ var MiniSearchView = Backbone.View.extend({
     template: _.template(require('./MiniSearchView.html')),
 
     events: {
-        'click button': 'onClick'
+        'click button': 'onClick',
+        'keyup': 'onKeyUp'
     },
 
     remove: function remove() {
@@ -14210,6 +14245,14 @@ var MiniSearchView = Backbone.View.extend({
             child.remove();
         });
         Backbone.View.prototype.remove.call(this);
+    },
+
+    onKeyUp: function onKeyUp(e) {
+        console.log('keyup event in SearchView');
+        if (e.which === 13) {
+
+            this.onClick();
+        };
     },
 
     onClick: function onClick() {
@@ -14296,7 +14339,7 @@ var SearchItemView = Backbone.View.extend({
 module.exports = SearchItemView;
 
 },{"./SearchItemView.html":26,"backbone":1,"jquery":2,"underscore":3}],28:[function(require,module,exports){
-module.exports = "<!-- This is characters.html -->\n\n<h2>Search for your own hero</h2>\n\n<input type=\"text\" placeholder=\"ex: Spider-Man\">\n<button class=\"search-button\"></button>\n\n\n\n<!-- add class of \"active\" to see dropdown results\n<div class=\"searchresults active\">\n\nNOTICE!!!  We changed this:  No <form> and input to button.\n\n-->\n<div class=\"searchresults\">\n    <ul class='searchView'>\n    </ul>\n</div>\n\n<div class=\"top_picks clearfix\">\n    <h1>Top Picks</h1>\n    <div class=\"first-hero\">\n        <img src=\"img/portrait_uncanny.jpg\" alt=\"character\">\n        <h2>Character Name</h2> \n    </div>\n    <div class=\"second-hero\">\n        <img src=\"img/portrait_uncanny.jpg\" alt=\"character\">\n        <h2>Character Name</h2> \n    </div>\n    <div class=\"third-hero\">\n        <img src=\"img/portrait_uncanny.jpg\" alt=\"character\">\n        <h2>Character Name</h2> \n    </div>\n</div>\n\n";
+module.exports = "<!-- This is characters.html -->\n\n<h2>Search for your own hero</h2>\n\n<input type=\"text\" id=\"search\" placeholder=\"ex: Spider-Man\">\n<button class=\"search-button\"></button>\n\n\n\n<!-- add class of \"active\" to see dropdown results\n<div class=\"searchresults active\">\n\nNOTICE!!!  We changed this:  No <form> and input to button.\n\n-->\n<div class=\"searchresults\">\n    <ul class='searchView'>\n    </ul>\n</div>\n\n<div class=\"top_picks clearfix\">\n    <h1>Top Picks</h1>\n    <div class=\"first-hero\">\n        <img src=\"img/portrait_uncanny.jpg\" alt=\"character\">\n        <h2>Character Name</h2> \n    </div>\n    <div class=\"second-hero\">\n        <img src=\"img/portrait_uncanny.jpg\" alt=\"character\">\n        <h2>Character Name</h2> \n    </div>\n    <div class=\"third-hero\">\n        <img src=\"img/portrait_uncanny.jpg\" alt=\"character\">\n        <h2>Character Name</h2> \n    </div>\n</div>\n\n";
 
 },{}],29:[function(require,module,exports){
 'use strict';
@@ -14317,7 +14360,7 @@ var SearchView = Backbone.View.extend({
 
     events: {
         'click button': 'onClick',
-        'keyUp': 'onKeyUp',
+        'keyup': 'onKeyUp',
         'click .first-hero': 'onFirstHeroClick',
         'click .second-hero': 'onSecondHeroClick',
         'click .third-hero': 'onThirdHeroClick'
@@ -14336,7 +14379,7 @@ var SearchView = Backbone.View.extend({
     },
     onKeyUp: function onKeyUp(e) {
         console.log('keyup event in SearchView');
-        if (e.keyCode === '13') {
+        if (e.which === 13) {
 
             this.onClick();
         };
@@ -14528,7 +14571,7 @@ var SingleHeroModel = Backbone.Model.extend({
 
             //var marvelKey = 'apikey=41f7d8754906d29d9b0dd03e19b6138a';
 
-            return 'http://gateway.marvel.com/v1/public/characters/' + this.id + '?' + marvelKey;
+            return 'https://gateway.marvel.com/v1/public/characters/' + this.id + '?' + marvelKey;
         };
     },
 

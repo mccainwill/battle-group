@@ -14,7 +14,7 @@ var SearchView = Backbone.View.extend({
    
     events: {
         'click button': 'onClick',
-        'keyUp'     : 'onKeyUp',
+        'keyup'     : 'onKeyUp',
         'click .first-hero':'onFirstHeroClick',
         'click .second-hero':'onSecondHeroClick',
         'click .third-hero':'onThirdHeroClick'
@@ -34,8 +34,8 @@ var SearchView = Backbone.View.extend({
         
     },    
     onKeyUp: function (e) {
-        console.log('keyup event in SearchView')
-        if (e.keyCode === '13') {
+        console.log('keyup event in SearchView');
+        if (e.which === 13) {
 
             this.onClick();
         };

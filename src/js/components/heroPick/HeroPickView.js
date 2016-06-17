@@ -36,6 +36,7 @@ var HeroPickView = Backbone.View.extend({
             $('.search-dock').addClass('active');
             $('.search-dock').append(this.searchView.$el);
             this.listenTo(this.searchView,'pick', this.show);
+            $('input').focus();
         }
 
 

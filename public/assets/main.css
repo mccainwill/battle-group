@@ -326,22 +326,49 @@ button.search-button {
   background-repeat: no-repeat; }
 
 .health_bars {
-  padding: 20px 0;
-  display: none; }
+  padding: 20px 0; }
 
 .health_left, .health_right {
   display: block;
-  width: 35%;
+  width: 40%;
   height: 60px;
-  background: red; }
+  background: rgba(128, 128, 128, 0.5); }
 
 .health_left {
   float: left;
-  margin-left: 11%; }
+  border-top: yellow 2px solid;
+  border-right: yellow 2px solid;
+  border-bottom: yellow 2px solid; }
+  .health_left .health {
+    background: red;
+    height: 100%;
+    float: inherit;
+    transition: ease .5s; }
+    .health_left .health span {
+      font-family: Badaboom;
+      float: left;
+      margin-left: 20px;
+      font-size: 2em;
+      line-height: 60px;
+      text-shadow: 1px 1px 1px black; }
 
 .health_right {
   float: right;
-  margin-right: 11%; }
+  border-top: yellow 2px solid;
+  border-left: yellow 2px solid;
+  border-bottom: yellow 2px solid; }
+  .health_right .health {
+    background: red;
+    height: 100%;
+    float: inherit;
+    transition: ease .5s; }
+    .health_right .health span {
+      font-family: Badaboom;
+      float: right;
+      margin-right: 20px;
+      font-size: 2em;
+      line-height: 60px;
+      text-shadow: 1px 1px 1px black; }
 
 .combatants {
   position: relative;
@@ -378,7 +405,7 @@ button.search-button {
 .stats_battle, .turn_battle {
   background: #043261;
   margin: 30px auto;
-  width: 78%; }
+  width: 82%; }
 
 .victories_left, .victories_right {
   padding: 0;
@@ -434,34 +461,35 @@ button.search-button {
   .button:nth-child(2), .button:nth-child(3) {
     display: none; }
 
-.turn_battle .char_one, .turn_battle .char_two {
-  display: table; }
-  .turn_battle .char_one p, .turn_battle .char_two p {
-    font-size: 1.5em;
-    display: table-cell;
-    vertical-align: middle; }
-  .turn_battle .char_one img, .turn_battle .char_two img {
-    width: 100px; }
-.turn_battle .char_one {
-  float: left;
-  padding: 20px 0 0 20px; }
-  .turn_battle .char_one img {
+.turn_battle {
+  overflow: hidden; }
+  .turn_battle .char_one, .turn_battle .char_two {
+    display: table; }
+    .turn_battle .char_one p, .turn_battle .char_two p {
+      font-size: 1.5em;
+      display: table-cell;
+      vertical-align: middle; }
+    .turn_battle .char_one img, .turn_battle .char_two img {
+      width: 100px; }
+  .turn_battle .char_one {
     float: left;
-    padding-right: 10px; }
-.turn_battle .char_two {
-  float: right;
-  padding: 0 20px 20px 0; }
-  .turn_battle .char_two img {
+    padding: 20px 0 0 20px; }
+    .turn_battle .char_one img {
+      float: left;
+      padding-right: 10px; }
+  .turn_battle .char_two {
     float: right;
-    padding-left: 10px; }
+    padding: 0 20px 20px 0; }
+    .turn_battle .char_two img {
+      float: right;
+      padding-left: 10px; }
 
 .turns {
   list-style-type: none;
   padding: 10px 0;
   margin: 0 auto;
   height: 300px;
-  overflow: scroll;
-  width: 90%; }
+  overflow-y: scroll; }
   .turns li {
     margin: 20px;
     font-size: .9em; }

@@ -80,10 +80,44 @@ var BattleSpaceView = Backbone.View.extend({
             this.$el.find('.combatant_two > p').html(this.model2.get('name')); 
 
             function appendLI () {
-                console.log("turn by turn loop");
-                console.log(result.fightData.length);
+                // console.log("turn by turn loop");
+                // console.log(result.fightData.length);
 
                 _this.$el.find('.turns').prepend($('<li>').html(result.fightData[counter].message));
+
+                var healthRight = ((result.fightData[counter].defenderWounds / result.fightData[0].defenderWounds) * 100).toFixed(0);
+                
+                $('.health_right .health').css('width', function(width){
+                    
+                    if(healthRight < 100){
+                        width = (healthRight + "%");
+                        return width;
+                    }
+                    else{
+                        width = (100 + "%");
+                        return width;
+                    }
+                });
+
+                var healthLeft = ((result.fightData[counter].attackerWounds / result.fightData[0].attackerWounds) * 100).toFixed(0);
+
+                $('.health_left .health').css('width', function(width){
+                    
+                    if(healthLeft < 100){
+                        width = (healthLeft + "%");
+                        return width;
+                    }
+                    else{
+                        width = (100 + "%");
+                        return width;
+                    }
+                });
+
+                console.log();
+                console.log(result.fightData[counter].defenderWounds);
+                console.log(result.fightData[0].defenderWounds);
+
+                // this.$el.find('.health_right')
 
                 counter++;
 
@@ -92,7 +126,9 @@ var BattleSpaceView = Backbone.View.extend({
                 };
 
                 if (counter < result.fightData.length) {
-                    setTimeout(appendLI, 4000);
+                    setTimeout(appendLI, 2500);
+                    
+
                 };
 
                 
@@ -112,6 +148,7 @@ var BattleSpaceView = Backbone.View.extend({
                 console.log(result);
                 console.log(this.model1.attributes);
                 console.log(this.model2.attributes);
+                console.log(result.fightData[0].attackerWounds);
 
                 if (result.winner !== 'draw') {
 
@@ -125,6 +162,7 @@ var BattleSpaceView = Backbone.View.extend({
                 var counter = 0;
                 var maxLength = 5;
                 setTimeout(appendLI, 1000);
+
             }   
         }   
     },
