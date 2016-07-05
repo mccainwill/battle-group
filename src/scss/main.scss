@@ -36,11 +36,13 @@ main{
 	width:78%;
 	margin: 0 auto;
 	position: relative;
+	max-width: 1000px;
 }
 
 .wrapper{
 	width: 78%;
 	margin: 0 auto;
+	max-width: 1000px;
 }
 
 .main-dock{	
@@ -59,6 +61,7 @@ main{
 
 header{
 	width: 78%;
+	max-width: 1000px;
 	margin: 0 auto;
 	position: relative;
 	z-index: 2;

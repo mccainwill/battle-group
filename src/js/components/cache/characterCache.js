@@ -1,4 +1,4 @@
-var SingleHeroModel = require('../singleHero/SingleHeroModel');
+var SingleHeroModel = require('../singleHero/SingleHeroModel.js');
 
 //  This is a file storage Utility only good for a single URL, 
 //  but it works like saving to a file.  Will work across 

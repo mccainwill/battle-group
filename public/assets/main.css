@@ -704,11 +704,13 @@ body {
 main {
   width: 78%;
   margin: 0 auto;
-  position: relative; }
+  position: relative;
+  max-width: 1000px; }
 
 .wrapper {
   width: 78%;
-  margin: 0 auto; }
+  margin: 0 auto;
+  max-width: 1000px; }
 
 .main-dock {
   height: 100%; }
@@ -722,6 +724,7 @@ main {
 
 header {
   width: 78%;
+  max-width: 1000px;
   margin: 0 auto;
   position: relative;
   z-index: 2;
@@ -1025,6 +1028,9 @@ footer {
     font-size: 3.5em; }
 
   /* Bio */
+  .card {
+    margin-bottom: 40px; }
+
   .combatant {
     background-size: contain;
     padding-bottom: 70px; }
@@ -1052,6 +1058,8 @@ footer {
       left: -40px; }
     .character_bio button {
       margin-bottom: auto; }
+    .character_bio .magical_div {
+      margin-bottom: 10px; }
 
   .wins_losses h3 {
     float: left; } }
@@ -1113,7 +1121,7 @@ footer {
     background-size: contain;
     background-repeat: no-repeat;
     width: 50%;
-    padding-top: 72%;
+    padding-top: 65%;
     float: left;
     position: relative;
     box-sizing: border-box; }
