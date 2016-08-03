@@ -3,7 +3,9 @@ var $ = require('jquery');
 var Backbone = require('backbone');
 
 var eStats = require('../utils/eStats.js');
-var utils = require('../utils/utils.js')
+var utils = require('../utils/utils.js');
+var battleSetup = require('./BattleSetupView.js');
+
 // 
 // Child Views are BattleDisplayView
 //    healthbar views
@@ -14,13 +16,31 @@ var BattleSpaceView = Backbone.View.extend({
     template2: _.template(require('./turnByTurn.html')),
 
     events: {
-        'click .battle_buttons': 'onRematch'
+        'click .rematchbutton': 'onRematch',
+        'click .statbutton': 'onStatBattle'
     },
 
     onRematch: function () {
             
         window.location.reload();
         
+    },
+
+    onStatBattle: function(){
+
+        window.location.hash = '/battleSpace/'
+                + battleSetup.initialize.heroPick1.get('id') + '/'
+                + options.initialize.heroPick2.get('id') + '/stats';
+
+
+    },
+
+    onTurnBattle: function(){
+
+    },
+
+    onNewBattle: function(){
+
     },
 
     onClick: function () {

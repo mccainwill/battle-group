@@ -316,8 +316,9 @@ button.search-button {
   box-sizing: border-box;
   border: solid 5px #000; }
 
-.turnview, .statview {
-  width: 100%; }
+main.turnview, main.statview {
+  width: 100%;
+  max-width: none; }
 
 .arena {
   background: url(../img/sidewalk.jpg);
@@ -405,7 +406,8 @@ button.search-button {
 .stats_battle, .turn_battle {
   background: #043261;
   margin: 30px auto;
-  width: 82%; }
+  width: 82%;
+  max-width: 1000px; }
 
 .victories_left, .victories_right {
   padding: 0;
@@ -442,7 +444,8 @@ button.search-button {
   width: 82%;
   display: block;
   text-align: center;
-  margin: 20px auto; }
+  margin: 20px auto;
+  max-width: 1000px; }
 
 .button {
   display: inline-block;

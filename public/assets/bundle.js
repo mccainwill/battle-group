@@ -13402,6 +13402,8 @@ var Backbone = require('backbone');
 
 var eStats = require('../utils/eStats.js');
 var utils = require('../utils/utils.js');
+var battleSetup = require('./BattleSetupView.js');
+
 //
 // Child Views are BattleDisplayView
 //    healthbar views
@@ -13412,13 +13414,23 @@ var BattleSpaceView = Backbone.View.extend({
     template2: _.template(require('./turnByTurn.html')),
 
     events: {
-        'click .battle_buttons': 'onRematch'
+        'click .rematchbutton': 'onRematch',
+        'click .statbutton': 'onStatBattle'
     },
 
     onRematch: function onRematch() {
 
         window.location.reload();
     },
+
+    onStatBattle: function onStatBattle() {
+
+        window.location.hash = '/battleSpace/' + battleSetup.initialize.heroPick1.get('id') + '/' + options.initialize.heroPick2.get('id') + '/stats';
+    },
+
+    onTurnBattle: function onTurnBattle() {},
+
+    onNewBattle: function onNewBattle() {},
 
     onClick: function onClick() {
 
@@ -13560,7 +13572,7 @@ var BattleSpaceView = Backbone.View.extend({
 
 module.exports = BattleSpaceView;
 
-},{"../utils/eStats.js":34,"../utils/utils.js":35,"./statsBattle.html":9,"./turnByTurn.html":10,"backbone":1,"jquery":2,"underscore":3}],7:[function(require,module,exports){
+},{"../utils/eStats.js":34,"../utils/utils.js":35,"./BattleSetupView.js":5,"./statsBattle.html":9,"./turnByTurn.html":10,"backbone":1,"jquery":2,"underscore":3}],7:[function(require,module,exports){
 'use strict';
 
 var Backbone = require('backbone');
@@ -13647,7 +13659,7 @@ module.exports = "<h3>RECENT BATTLES</h3>\n<div class=\"battle1\">\n    <div cla
 module.exports = "<main class=\"statview\">\n    <section class=\"arena clearfix\">\n        <div class=\"health_bars clearfix\">\n            <div class=\"health_left\"></div>\n            <div class=\"health_right\"></div>\n        </div>\n\n\n        <div class=\"combatants\">\n            <div class=\"combatant_one\">\n                <img class=\"char_pic\" src=\"\" />\n                <img src=\"img/shadow.png\" />\n                <p>CHARACTER NAME</p>\n            </div>\n\n            <div class=\"action_area\">\n                \n            </div>\n            \n            <div class=\"combatant_two\">\n                <img class=\"char_pic\" src=\"\" />\n                <img src=\"img/shadow.png\" />\n                <p>CHARACTER NAME</p>\n            </div>\n        </div>\n\n\n    </section>\n\n    <section class=\"stats_battle clearfix\">\n        <ul class=\"victories_left\">\n            <li class=\"wins\"></li>\n            <li class=\"percent\"></li>\n        </ul>\n\n        <ul class=\"battle_labels\">\n                <li>\n                <h2>Wins</h2>\n                <p>Out of 15 battles</p>\n                </li>\n                \n                <li>\n                <h2>Chance of Victory</h2>\n                </li>\n        </ul>\n\n        <ul class=\"victories_right\">\n            <li class=\"wins\"></li>\n            <li class=\"percent\"></li>\n        </ul>\n\n    </section>\n\n    <section class=\"battle_buttons\">\n        <div class=\"button\">\n            <p>REMATCH</p>\n        </div>\n        <div class=\"button\">\n            <p>NEW BATTLE</p>\n        </div>\n        <div class=\"button\">\n            <p>TURN BATTLE</p>\n        </div>\n    </section>\n</main>";
 
 },{}],10:[function(require,module,exports){
-module.exports = "        <main class=\"turnview\">\n            <section class=\"arena clearfix\">\n                <div class=\"health_bars clearfix\">\n                    <div class=\"health_left\">\n                        <div class=\"health\"><span>Stamina</span></div>\n                    </div>\n                    <div class=\"health_right\">\n                        <div class=\"health\"><span>Stamina</span></div>\n                    </div>\n                </div>\n\n\n                <div class=\"combatants\">\n                    <div class=\"combatant_one\">\n                        <img class=\"char_pic\" src=\"img/character_square.jpg\" />\n                        <img src=\"img/shadow.png\" />\n                        <p>CHARACTER NAME</p>\n                    </div>\n\n                    <div class=\"action_area\">\n                        \n                    </div>\n                    \n                    <div class=\"combatant_two\">\n                        <img class=\"char_pic\" src=\"img/character_square.jpg\" />\n                        <img src=\"img/shadow.png\" />\n                        <p>CHARACTER NAME</p>\n                    </div>\n                </div>\n\n\n            </section>\n\n            <section class=\"turn_battle\">\n                <ul class=\"turns\">\n                    <!-- \n                    For Character One, picture before text.\n                    For Character Two, text before picture.\n                    Order is either determined by JS insert order, or images are absolutely positioned by parent class. -->\n                    \n                    \n                </ul>\n            </section>\n\n            <section class=\"battle_buttons\">\n                <div class=\"button\">\n                    <p>REMATCH</p>\n                </div>\n                <div class=\"button\">\n                    <p>NEW BATTLE</p>\n                </div>\n                <div class=\"button\">\n                    <p>TURN BATTLE</p>\n                </div>\n                <!-- <a href=\"\">Rematch</a> -->\n            </section>\n        </main>";
+module.exports = "        <main class=\"turnview\">\n            <section class=\"arena clearfix\">\n                <div class=\"health_bars clearfix\">\n                    <div class=\"health_left\">\n                        <div class=\"health\"><span>Stamina</span></div>\n                    </div>\n                    <div class=\"health_right\">\n                        <div class=\"health\"><span>Stamina</span></div>\n                    </div>\n                </div>\n\n\n                <div class=\"combatants\">\n                    <div class=\"combatant_one\">\n                        <img class=\"char_pic\" src=\"img/character_square.jpg\" />\n                        <img src=\"img/shadow.png\" />\n                        <p>CHARACTER NAME</p>\n                    </div>\n\n                    <div class=\"action_area\">\n                        \n                    </div>\n                    \n                    <div class=\"combatant_two\">\n                        <img class=\"char_pic\" src=\"img/character_square.jpg\" />\n                        <img src=\"img/shadow.png\" />\n                        <p>CHARACTER NAME</p>\n                    </div>\n                </div>\n\n\n            </section>\n\n            <section class=\"turn_battle\">\n                <ul class=\"turns\">\n                    <!-- \n                    For Character One, picture before text.\n                    For Character Two, text before picture.\n                    Order is either determined by JS insert order, or images are absolutely positioned by parent class. -->\n                    \n                    \n                </ul>\n            </section>\n\n            <section class=\"battle_buttons\">\n                <div class=\"button\">\n                    <p class=\"rematchbutton\">REMATCH</p>\n                </div>\n                <div class=\"button\">\n                    <p class=\"newbutton\">NEW BATTLE</p>\n                </div>\n                <div class=\"button\">\n                    <p class=\"statbutton\">STAT BATTLE</p>\n                </div>\n                <!-- <a href=\"\">Rematch</a> -->\n            </section>\n        </main>";
 
 },{}],11:[function(require,module,exports){
 'use strict';

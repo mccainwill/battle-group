@@ -1,5 +1,6 @@
-.turnview, .statview{
+main.turnview, main.statview{
     width:100%;
+    max-width: none;
 }
 
 .arena{
@@ -119,6 +120,7 @@
     // border: 20px solid #f7942e;
     margin: 30px auto;
     width: 82%;
+    max-width: 1000px;
 }
 
 // Stat Battle 
@@ -166,7 +168,7 @@
     display: block;
     text-align: center;
     margin: 20px auto;
-    
+    max-width: 1000px;    
 }
 
 .button{
@@ -198,6 +200,7 @@
 // Turn Battle
 
 .turn_battle {
+
     overflow: hidden;
 
     .char_one, .char_two{
