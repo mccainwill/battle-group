@@ -14,7 +14,7 @@
 	}
 
 	header{
-		width: 78%;
+		width: 82%;
 		margin:0 auto;
 		height: 115px;
 
@@ -265,6 +265,15 @@
 
 		.wins, .percent{
 			font-size: 3.5em;
+		}
+	}
+
+	.battle_buttons{
+		display: flex;
+
+		.button{
+			flex:1;
+			width: auto;
 		}
 	}
 

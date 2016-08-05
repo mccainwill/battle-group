@@ -449,7 +449,7 @@ main.turnview, main.statview {
 
 .button {
   display: inline-block;
-  width: 30%;
+  width: 100%;
   height: 100px;
   background: orange;
   text-align: center;
@@ -459,10 +459,6 @@ main.turnview, main.statview {
     font-size: 2em;
     color: #000;
     font-family: Badaboom; }
-  .button:first-child {
-    width: 100%; }
-  .button:nth-child(2), .button:nth-child(3) {
-    display: none; }
 
 .turn_battle {
   overflow: hidden; }
@@ -895,7 +891,7 @@ footer {
     width: 280px; }
 
   header {
-    width: 78%;
+    width: 82%;
     margin: 0 auto;
     height: 115px; }
     header h1 {
@@ -1030,6 +1026,12 @@ footer {
   .victories_left .wins, .victories_left .percent, .victories_right .wins, .victories_right .percent {
     font-size: 3.5em; }
 
+  .battle_buttons {
+    display: flex; }
+    .battle_buttons .button {
+      flex: 1;
+      width: auto; }
+
   /* Bio */
   .card {
     margin-bottom: 40px; }
@@ -1068,7 +1070,7 @@ footer {
     float: left; } }
 @media screen and (min-width: 1000px) {
   header {
-    width: 78%;
+    width: 82%;
     margin: 0 auto;
     height: 115px; }
     header h1 {

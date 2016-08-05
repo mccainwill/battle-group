@@ -17,7 +17,9 @@ var BattleSpaceView = Backbone.View.extend({
 
     events: {
         'click .rematchbutton': 'onRematch',
-        'click .statbutton': 'onStatBattle'
+        'click .statbutton': 'onStatBattle',
+        'click .turnbutton': 'onTurnBattle',
+        'click .newbutton': 'onNewBattle'
     },
 
     onRematch: function () {
@@ -26,20 +28,25 @@ var BattleSpaceView = Backbone.View.extend({
         
     },
 
-    onStatBattle: function(){
+    onStatBattle: function(options){
 
-        window.location.hash = '/battleSpace/'
-                + battleSetup.initialize.heroPick1.get('id') + '/'
-                + options.initialize.heroPick2.get('id') + '/stats';
-
+        location.hash = '/battleSpace/'
+                + this.model1.get('id') + '/'
+                + this.model2.get('id') + '/stats';
 
     },
 
-    onTurnBattle: function(){
+    onTurnBattle: function(options){
+
+        location.hash = '/battleSpace/'
+                + this.model1.get('id') + '/'
+                + this.model2.get('id') + '/turn';
 
     },
 
     onNewBattle: function(){
+
+        location.hash = '/battleSetup';
 
     },
 
@@ -75,6 +82,7 @@ var BattleSpaceView = Backbone.View.extend({
 
         this.show();
 
+
         // INCOMPLETE!!!!!   Store Results from the Battle.
 
     },
@@ -86,7 +94,7 @@ var BattleSpaceView = Backbone.View.extend({
         // We need to wait for two 'sync' events.
         if(this.count++ === 2) {
 
-            console.log("BattleSpace Show Event");
+            // console.log("BattleSpace Show Event");
             
             this.$el.find('.combatant_one > .char_pic').attr('src', (this.model1.get('thumbnail')
                                             + '/detail'
@@ -94,50 +102,100 @@ var BattleSpaceView = Backbone.View.extend({
 
             this.$el.find('.combatant_two > .char_pic').attr('src', (this.model2.get('thumbnail')
                                             + '/detail'
-                                            + '.'+this.model2.get('extension')));
+                                            + '.' + this.model2.get('extension')));
 
             this.$el.find('.combatant_one > p').html(this.model1.get('name'));
             this.$el.find('.combatant_two > p').html(this.model2.get('name')); 
 
-            function appendLI () {
+            
+
+            function appendLI (options) {
+
+                // var _this = this;
+                
+                var leftFighter = $('.combatant_one > p').text();
+                var rightFighter = $('.combatant_two > p').text();
+
+                var attackerData = result.fightData[counter].attackerName;
+                var defenderData = result.fightData[counter].defenderName;
+
                 // console.log("turn by turn loop");
                 // console.log(result.fightData.length);
 
                 _this.$el.find('.turns').prepend($('<li>').html(result.fightData[counter].message));
 
-                var healthRight = ((result.fightData[counter].defenderWounds / result.fightData[0].defenderWounds) * 100).toFixed(0);
-                
-                $('.health_right .health').css('width', function(width){
+                //Attack Animations
+
+                function shake(div){                                                                                                                                                                                            
+                    var interval = 100;                                                                                                 
+                    var distance = 10;                                                                                                  
+                    var times = 5;                                                                                                      
+
+                    $(div).css('position','relative');                                                                                  
+
+                    $(div).delay(2000);
+
+                    for(var iter=0;iter<(times+1);iter++){                                                                              
+                        $(div).animate({ 
+                            left:((iter%2==0 ? distance : distance*-1))
+                                },interval);                                   
+                    }//for                                                                                                              
+
+                    $(div).animate({ left: 0},interval);                                                                                
+
+                }//shake  
+
+                if((result.fightData[counter].attackerName == leftFighter) && (result.fightData[counter].type == 'assault:success')){
+                    shake(".combatant_two > img");
+                }
+                else if ((result.fightData[counter].attackerName == rightFighter) && (result.fightData[counter].type == 'assault:success')){
+                    shake(".combatant_one > img");
+                }
+
+                console.log(result.fightData[counter]);
+
+                //Health Calculation
+
+                var healthRight = 0;
+                var healthLeft = 0;
+
+                if(leftFighter == attackerData){
+                    healthLeft = ((result.fightData[counter].attackerWounds / result.fightData[0].attackerWounds) * 100).toFixed(0);
+                    healthRight = ((result.fightData[counter].defenderWounds / result.fightData[0].defenderWounds) * 100).toFixed(0);
+                } 
+                else{
+                    healthLeft = ((result.fightData[counter].defenderWounds / result.fightData[0].attackerWounds) * 100).toFixed(0);
+                    healthRight = ((result.fightData[counter].attackerWounds / result.fightData[0].defenderWounds) * 100).toFixed(0);
+                } 
+
+                //Health Bars
+                                
+                $('.health_right .health').css('width', function(rightwidth){
                     
                     if(healthRight < 100){
-                        width = (healthRight + "%");
-                        return width;
+                        rightwidth = (healthRight + "%");
+                        return rightwidth;
                     }
-                    else{
-                        width = (100 + "%");
-                        return width;
-                    }
-                });
-
-                var healthLeft = ((result.fightData[counter].attackerWounds / result.fightData[0].attackerWounds) * 100).toFixed(0);
-
-                $('.health_left .health').css('width', function(width){
                     
-                    if(healthLeft < 100){
-                        width = (healthLeft + "%");
-                        return width;
-                    }
                     else{
-                        width = (100 + "%");
-                        return width;
+                        rightwidth = (100 + "%");
+                        return rightwidth;
                     }
                 });
 
-                console.log();
-                console.log(result.fightData[counter].defenderWounds);
-                console.log(result.fightData[0].defenderWounds);
+                $('.health_left .health').css('width', function(leftwidth){
 
-                // this.$el.find('.health_right')
+                    if(healthLeft < 100){
+                        leftwidth = (healthLeft + "%");
+                        return leftwidth;
+                    }
+                    
+                    else{
+                        leftwidth = (100 + "%");
+                        return leftwidth;
+                    }
+
+                });
 
                 counter++;
 
@@ -164,11 +222,11 @@ var BattleSpaceView = Backbone.View.extend({
             } else {
                 result = BattleManager.narrativeBattle(utils.getStats(this.model1.get('id')),
                                                        utils.getStats(this.model2.get('id')));
-                console.log("Turn By Turn");
-                console.log(result);
-                console.log(this.model1.attributes);
-                console.log(this.model2.attributes);
-                console.log(result.fightData[0].attackerWounds);
+                // console.log("Turn By Turn");
+                // console.log(result);
+                // console.log(this.model1.attributes);
+                // console.log(this.model2.attributes);
+                // console.log(result.fightData[0].attackerWounds);
 
                 if (result.winner !== 'draw') {
 

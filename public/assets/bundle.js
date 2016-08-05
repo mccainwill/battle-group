@@ -13415,7 +13415,9 @@ var BattleSpaceView = Backbone.View.extend({
 
     events: {
         'click .rematchbutton': 'onRematch',
-        'click .statbutton': 'onStatBattle'
+        'click .statbutton': 'onStatBattle',
+        'click .turnbutton': 'onTurnBattle',
+        'click .newbutton': 'onNewBattle'
     },
 
     onRematch: function onRematch() {
@@ -13423,14 +13425,20 @@ var BattleSpaceView = Backbone.View.extend({
         window.location.reload();
     },
 
-    onStatBattle: function onStatBattle() {
+    onStatBattle: function onStatBattle(options) {
 
-        window.location.hash = '/battleSpace/' + battleSetup.initialize.heroPick1.get('id') + '/' + options.initialize.heroPick2.get('id') + '/stats';
+        location.hash = '/battleSpace/' + this.model1.get('id') + '/' + this.model2.get('id') + '/stats';
     },
 
-    onTurnBattle: function onTurnBattle() {},
+    onTurnBattle: function onTurnBattle(options) {
 
-    onNewBattle: function onNewBattle() {},
+        location.hash = '/battleSpace/' + this.model1.get('id') + '/' + this.model2.get('id') + '/turn';
+    },
+
+    onNewBattle: function onNewBattle() {
+
+        location.hash = '/battleSetup';
+    },
 
     onClick: function onClick() {
 
@@ -13476,43 +13484,85 @@ var BattleSpaceView = Backbone.View.extend({
             var maxLength;
 
             (function () {
-                var appendLI = function appendLI() {
+                var appendLI = function appendLI(options) {
+
+                    // var _this = this;
+
+                    var leftFighter = $('.combatant_one > p').text();
+                    var rightFighter = $('.combatant_two > p').text();
+
+                    var attackerData = result.fightData[counter].attackerName;
+                    var defenderData = result.fightData[counter].defenderName;
+
                     // console.log("turn by turn loop");
                     // console.log(result.fightData.length);
 
                     _this.$el.find('.turns').prepend($('<li>').html(result.fightData[counter].message));
 
-                    var healthRight = (result.fightData[counter].defenderWounds / result.fightData[0].defenderWounds * 100).toFixed(0);
+                    //Attack Animations
 
-                    $('.health_right .health').css('width', function (width) {
+                    function shake(div) {
+                        var interval = 100;
+                        var distance = 10;
+                        var times = 5;
+
+                        $(div).css('position', 'relative');
+
+                        $(div).delay(2000);
+
+                        for (var iter = 0; iter < times + 1; iter++) {
+                            $(div).animate({
+                                left: iter % 2 == 0 ? distance : distance * -1
+                            }, interval);
+                        } //for                                                                                                             
+
+                        $(div).animate({ left: 0 }, interval);
+                    } //shake 
+
+                    if (result.fightData[counter].attackerName == leftFighter && result.fightData[counter].type == 'assault:success') {
+                        shake(".combatant_two > img");
+                    } else if (result.fightData[counter].attackerName == rightFighter && result.fightData[counter].type == 'assault:success') {
+                        shake(".combatant_one > img");
+                    }
+
+                    console.log(result.fightData[counter]);
+
+                    //Health Calculation
+
+                    var healthRight = 0;
+                    var healthLeft = 0;
+
+                    if (leftFighter == attackerData) {
+                        healthLeft = (result.fightData[counter].attackerWounds / result.fightData[0].attackerWounds * 100).toFixed(0);
+                        healthRight = (result.fightData[counter].defenderWounds / result.fightData[0].defenderWounds * 100).toFixed(0);
+                    } else {
+                        healthLeft = (result.fightData[counter].defenderWounds / result.fightData[0].attackerWounds * 100).toFixed(0);
+                        healthRight = (result.fightData[counter].attackerWounds / result.fightData[0].defenderWounds * 100).toFixed(0);
+                    }
+
+                    //Health Bars
+
+                    $('.health_right .health').css('width', function (rightwidth) {
 
                         if (healthRight < 100) {
-                            width = healthRight + "%";
-                            return width;
+                            rightwidth = healthRight + "%";
+                            return rightwidth;
                         } else {
-                            width = 100 + "%";
-                            return width;
+                            rightwidth = 100 + "%";
+                            return rightwidth;
                         }
                     });
 
-                    var healthLeft = (result.fightData[counter].attackerWounds / result.fightData[0].attackerWounds * 100).toFixed(0);
-
-                    $('.health_left .health').css('width', function (width) {
+                    $('.health_left .health').css('width', function (leftwidth) {
 
                         if (healthLeft < 100) {
-                            width = healthLeft + "%";
-                            return width;
+                            leftwidth = healthLeft + "%";
+                            return leftwidth;
                         } else {
-                            width = 100 + "%";
-                            return width;
+                            leftwidth = 100 + "%";
+                            return leftwidth;
                         }
                     });
-
-                    console.log();
-                    console.log(result.fightData[counter].defenderWounds);
-                    console.log(result.fightData[0].defenderWounds);
-
-                    // this.$el.find('.health_right')
 
                     counter++;
 
@@ -13525,7 +13575,7 @@ var BattleSpaceView = Backbone.View.extend({
                     };
                 };
 
-                console.log("BattleSpace Show Event");
+                // console.log("BattleSpace Show Event");
 
                 _this2.$el.find('.combatant_one > .char_pic').attr('src', _this2.model1.get('thumbnail') + '/detail' + '.' + _this2.model1.get('extension'));
 
@@ -13542,11 +13592,11 @@ var BattleSpaceView = Backbone.View.extend({
                     $('.victories_right > .percent').html((result.fighter2.wins / .15).toFixed(0));
                 } else {
                     result = BattleManager.narrativeBattle(utils.getStats(_this2.model1.get('id')), utils.getStats(_this2.model2.get('id')));
-                    console.log("Turn By Turn");
-                    console.log(result);
-                    console.log(_this2.model1.attributes);
-                    console.log(_this2.model2.attributes);
-                    console.log(result.fightData[0].attackerWounds);
+                    // console.log("Turn By Turn");
+                    // console.log(result);
+                    // console.log(this.model1.attributes);
+                    // console.log(this.model2.attributes);
+                    // console.log(result.fightData[0].attackerWounds);
 
                     if (result.winner !== 'draw') {
 
@@ -13656,7 +13706,7 @@ module.exports = RecentBattleView;
 module.exports = "<h3>RECENT BATTLES</h3>\n<div class=\"battle1\">\n    <div class=\"character1\"><img></div>\n    <div class=\"recent_versus\"></div>\n    <div class=\"character2\"><img></div>\n</div>\n<div class=\"battle2\">\n    <div class=\"character1\"><img></div>\n    <div class=\"recent_versus\"></div>\n    <div class=\"character2\"><img></div>\n</div>      \n\n";
 
 },{}],9:[function(require,module,exports){
-module.exports = "<main class=\"statview\">\n    <section class=\"arena clearfix\">\n        <div class=\"health_bars clearfix\">\n            <div class=\"health_left\"></div>\n            <div class=\"health_right\"></div>\n        </div>\n\n\n        <div class=\"combatants\">\n            <div class=\"combatant_one\">\n                <img class=\"char_pic\" src=\"\" />\n                <img src=\"img/shadow.png\" />\n                <p>CHARACTER NAME</p>\n            </div>\n\n            <div class=\"action_area\">\n                \n            </div>\n            \n            <div class=\"combatant_two\">\n                <img class=\"char_pic\" src=\"\" />\n                <img src=\"img/shadow.png\" />\n                <p>CHARACTER NAME</p>\n            </div>\n        </div>\n\n\n    </section>\n\n    <section class=\"stats_battle clearfix\">\n        <ul class=\"victories_left\">\n            <li class=\"wins\"></li>\n            <li class=\"percent\"></li>\n        </ul>\n\n        <ul class=\"battle_labels\">\n                <li>\n                <h2>Wins</h2>\n                <p>Out of 15 battles</p>\n                </li>\n                \n                <li>\n                <h2>Chance of Victory</h2>\n                </li>\n        </ul>\n\n        <ul class=\"victories_right\">\n            <li class=\"wins\"></li>\n            <li class=\"percent\"></li>\n        </ul>\n\n    </section>\n\n    <section class=\"battle_buttons\">\n        <div class=\"button\">\n            <p>REMATCH</p>\n        </div>\n        <div class=\"button\">\n            <p>NEW BATTLE</p>\n        </div>\n        <div class=\"button\">\n            <p>TURN BATTLE</p>\n        </div>\n    </section>\n</main>";
+module.exports = "<main class=\"statview\">\n    <section class=\"arena clearfix\">\n        <div class=\"health_bars clearfix\">\n            <div class=\"health_left\"></div>\n            <div class=\"health_right\"></div>\n        </div>\n\n\n        <div class=\"combatants\">\n            <div class=\"combatant_one\">\n                <img class=\"char_pic\" src=\"\" />\n                <img src=\"img/shadow.png\" />\n                <p>CHARACTER NAME</p>\n            </div>\n\n            <div class=\"action_area\">\n                \n            </div>\n            \n            <div class=\"combatant_two\">\n                <img class=\"char_pic\" src=\"\" />\n                <img src=\"img/shadow.png\" />\n                <p>CHARACTER NAME</p>\n            </div>\n        </div>\n\n\n    </section>\n\n    <section class=\"stats_battle clearfix\">\n        <ul class=\"victories_left\">\n            <li class=\"wins\"></li>\n            <li class=\"percent\"></li>\n        </ul>\n\n        <ul class=\"battle_labels\">\n                <li>\n                <h2>Wins</h2>\n                <p>Out of 15 battles</p>\n                </li>\n                \n                <li>\n                <h2>Chance of Victory</h2>\n                </li>\n        </ul>\n\n        <ul class=\"victories_right\">\n            <li class=\"wins\"></li>\n            <li class=\"percent\"></li>\n        </ul>\n\n    </section>\n\n    <section class=\"battle_buttons\">\n        <div class=\"button\">\n            <p class=\"rematchbutton\">REMATCH</p>\n        </div>\n        <div class=\"button\">\n            <p class=\"newbutton\">NEW BATTLE</p>\n        </div>\n        <div class=\"button\">\n            <p class=\"turnbutton\">TURN BATTLE</p>\n        </div>\n    </section>\n</main>";
 
 },{}],10:[function(require,module,exports){
 module.exports = "        <main class=\"turnview\">\n            <section class=\"arena clearfix\">\n                <div class=\"health_bars clearfix\">\n                    <div class=\"health_left\">\n                        <div class=\"health\"><span>Stamina</span></div>\n                    </div>\n                    <div class=\"health_right\">\n                        <div class=\"health\"><span>Stamina</span></div>\n                    </div>\n                </div>\n\n\n                <div class=\"combatants\">\n                    <div class=\"combatant_one\">\n                        <img class=\"char_pic\" src=\"img/character_square.jpg\" />\n                        <img src=\"img/shadow.png\" />\n                        <p>CHARACTER NAME</p>\n                    </div>\n\n                    <div class=\"action_area\">\n                        \n                    </div>\n                    \n                    <div class=\"combatant_two\">\n                        <img class=\"char_pic\" src=\"img/character_square.jpg\" />\n                        <img src=\"img/shadow.png\" />\n                        <p>CHARACTER NAME</p>\n                    </div>\n                </div>\n\n\n            </section>\n\n            <section class=\"turn_battle\">\n                <ul class=\"turns\">\n                    <!-- \n                    For Character One, picture before text.\n                    For Character Two, text before picture.\n                    Order is either determined by JS insert order, or images are absolutely positioned by parent class. -->\n                    \n                    \n                </ul>\n            </section>\n\n            <section class=\"battle_buttons\">\n                <div class=\"button\">\n                    <p class=\"rematchbutton\">REMATCH</p>\n                </div>\n                <div class=\"button\">\n                    <p class=\"newbutton\">NEW BATTLE</p>\n                </div>\n                <div class=\"button\">\n                    <p class=\"statbutton\">STAT BATTLE</p>\n                </div>\n                <!-- <a href=\"\">Rematch</a> -->\n            </section>\n        </main>";

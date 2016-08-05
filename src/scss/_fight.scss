@@ -173,14 +173,12 @@ main.turnview, main.statview{
 
 .button{
 	display: inline-block;
-    width: 30%;
+    width: 100%;
     height: 100px;
     background: orange;
-    // float: left;
     text-align: center;
     border: 6px solid #000;
     box-sizing: border-box;
-    // margin:0 10px;
 
     p{
     	font-size: 2em;
@@ -189,11 +187,11 @@ main.turnview, main.statview{
     }
 
     &:first-child{
-        width:100%;
+        // width:100%;
     }
 
     &:nth-child(2), &:nth-child(3){
-        display: none;
+        // display: none;
     }
 }
 
