@@ -145,10 +145,12 @@ var BattleSpaceView = Backbone.View.extend({
 
                 }//shake  
 
-                if((result.fightData[counter].attackerName == leftFighter) && (result.fightData[counter].type == 'assault:success')){
+                if(((result.fightData[counter].attackerName == leftFighter) && (result.fightData[counter].type == 'assault:success')) ||
+                    ((result.fightData[counter].attackerName == leftFighter) && (result.fightData[counter].type == 'shoot:success'))){
                     shake(".combatant_two > img");
                 }
-                else if ((result.fightData[counter].attackerName == rightFighter) && (result.fightData[counter].type == 'assault:success')){
+                else if (((result.fightData[counter].attackerName == rightFighter) && (result.fightData[counter].type == 'assault:success')) ||
+                    ((result.fightData[counter].attackerName == rightFighter) && (result.fightData[counter].type == 'shoot:success'))){
                     shake(".combatant_one > img");
                 }
 
